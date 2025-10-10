@@ -1,8 +1,8 @@
-import {Direction, DIRECTIONS, RoverState} from "./RoverState";
+import {Direction, RoverState} from "./RoverState";
 import {CommandLeft} from "./commandHandling/strategies/commandLeft";
 import {CommandRight} from "./commandHandling/strategies/commandRight";
 import {CommandMove} from "./commandHandling/strategies/commandMove";
-import {COMMAND, CommandsHandler} from "./commandHandling/commandsHandler";
+import {CommandsHandler} from "./commandHandling/commandsHandler";
 
 export class Rover {
     private roverState: RoverState;

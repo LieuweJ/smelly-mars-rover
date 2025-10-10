@@ -1,9 +1,9 @@
 import {EAST, NORTH, RoverState, SOUTH, WEST} from "../../RoverState";
-import {COMMAND_TURN_LEFT, COMMAND, CommandStrategy} from "../commandsHandler";
+import {COMMAND_TURN_LEFT, CommandStrategy} from "../commandsHandler";
 
 
 export class CommandLeft implements CommandStrategy {
-    shouldExecute(command: COMMAND): boolean {
+    shouldExecute(command: string): boolean {
         return command === COMMAND_TURN_LEFT
     }
 

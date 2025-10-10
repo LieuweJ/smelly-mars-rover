@@ -11,11 +11,9 @@ export const COMMAND_MOVE = COMMAND.M;
 export const COMMAND_TURN_LEFT = COMMAND.L;
 
 export type CommandStrategy = {
-    shouldExecute: (command: COMMAND) => boolean;
+    shouldExecute: (command: string) => boolean;
     execute: (roverState: RoverState) => void;
 }
-
-const INVALID_COMMAND = "Invalid command";
 
 export class CommandsHandler {
     private readonly commandStrategies: CommandStrategy[];
@@ -26,17 +24,13 @@ export class CommandsHandler {
 
     handle(commands: string, roverState: RoverState) {
         for (let i = 0; i < commands.length; i++) {
-            const command = this.getCommand(commands[i]);
-
-            if (command === INVALID_COMMAND) {
-                return;
-            }
+            const command = commands[i];
 
             this.handleCommand(command, roverState);
         }
     }
 
-    private handleCommand(command: COMMAND, roverState: RoverState) {
+    private handleCommand(command: string, roverState: RoverState) {
         for (const strategy of this.commandStrategies) {
             if (strategy.shouldExecute(command)) {
                 strategy.execute(roverState);
@@ -44,13 +38,4 @@ export class CommandsHandler {
             }
         }
     }
-
-    private getCommand(command: string): COMMAND | typeof INVALID_COMMAND {
-        if (command !== COMMAND_TURN_LEFT && command !== COMMAND_TURN_RIGHT && command !== COMMAND_MOVE) {
-            return INVALID_COMMAND
-        }
-
-        return command as COMMAND;
-    }
-
 }

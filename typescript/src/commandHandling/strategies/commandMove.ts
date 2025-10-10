@@ -1,8 +1,8 @@
 import {EAST, NORTH, RoverState, SOUTH, WEST} from "../../RoverState";
-import {COMMAND, COMMAND_MOVE, CommandStrategy} from "../commandsHandler";
+import {COMMAND_MOVE, CommandStrategy} from "../commandsHandler";
 
 export class CommandMove implements CommandStrategy {
-    shouldExecute(command: COMMAND): boolean {
+    shouldExecute(command: string): boolean {
         return command === COMMAND_MOVE
     }
 

@@ -37,6 +37,7 @@ Done:
 - move commandHandling to separate class to handle commandProcessInterfaces.
 - move setting roverState in rover.construction should move its responsibilities to Rover.
 - cleanup
+- Removed type command checking in handler to allow easier adding of new commands.
 
 Not doing:
 
