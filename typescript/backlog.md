@@ -5,14 +5,14 @@ Responsibility:
 
 Refine abstractions:
 
-- Move commandRight handling to separate class with commandProcessInterface
-- Move commandForward handling to separate class with commandProcessInterface
 - move commandHandling to separate class to handle commandProcessInterfaces.
 
 Doing:
-- Move commandLeft handling to separate class with commandProcessInterface
+
+- Move commandForward handling to separate class with commandProcessInterface
 
 Done:
+
 - add coverage script
 - add test for rover.G
 - add test for rover constructor
@@ -31,6 +31,9 @@ Done:
 - move get position to Rover
 - Added techDebt.md
 - Added logging of usage.
+- Move commandLeft handling to separate class with commandProcessInterface
+- Move commandRight handling to separate class with commandProcessInterface
 
 Not doing:
+
 - add README with docs (already in main root of project)
