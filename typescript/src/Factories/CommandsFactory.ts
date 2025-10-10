@@ -1,7 +1,7 @@
-import {COMMAND, COMMAND_MOVE, COMMAND_TURN_LEFT, COMMAND_TURN_RIGHT} from "./commandsHandler";
+import {COMMAND, COMMAND_MOVE, COMMAND_TURN_LEFT, COMMAND_TURN_RIGHT} from "../commandHandling/commandsHandler";
 
-export class StringToCommandsHandler {
-    static parse(input: string): COMMAND[] {
+export class CommandsFactory {
+    static fromString(input: string): COMMAND[] {
         const commands: COMMAND[] = []
 
         const chars = input.split('');

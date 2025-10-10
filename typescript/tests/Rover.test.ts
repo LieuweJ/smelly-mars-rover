@@ -1,4 +1,6 @@
 import {Rover} from '../src/Rover';
+import {CommandsFactory} from "../src/Factories/CommandsFactory";
+import {RoverStateFactory} from "../src/Factories/RoverStateFactory";
 
 describe("MarsRoverShould", () => {
     test.each([
@@ -76,5 +78,11 @@ describe("MarsRoverShould", () => {
         const initialPosition = "3 5 S";
         const rover = new Rover(initialPosition);
         expect(rover.pos()).toBe(initialPosition);
+    })
+
+    test('RoverStateFactory', () => {
+        const result = RoverStateFactory.create();
+
+        expect(result.printCurrentPosition()).toBe('0 0 N')
     })
 });

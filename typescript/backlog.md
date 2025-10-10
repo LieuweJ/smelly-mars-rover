@@ -43,6 +43,8 @@ Done:
 - ----- After 3 hours
 - Make commandsHandler only work with a list of Commands.
 - Restore old behaviour: If Rover.constructor gets less than 3 params, it should generate rover in default position
+- Move initialPosition of RoverState mapping to Factory
+- Move 'create initialPosition' to Factory class.
 
 Not doing:
 

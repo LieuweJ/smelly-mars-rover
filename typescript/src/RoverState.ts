@@ -23,14 +23,6 @@ export class RoverState {
         this.frontFacing = frontFacing;
     }
 
-    static isValidDirection(direction: string): direction is Direction {
-        return Object.values(DIRECTIONS).includes(direction as Direction);
-    }
-
-    static isValidCoordinate(position: number): boolean {
-        return !isNaN(position);
-    }
-
     isFacing(direction: Direction) {
         return this.frontFacing === direction;
     }
