@@ -1,4 +1,11 @@
-import {Direction, DIRECTIONS, RoverState} from "../RoverState";
+import {Direction, DIRECTIONS, EAST, NORTH, RoverState, SOUTH, WEST} from "../RoverState";
+
+const stringToDirectionMap: Record<string, Direction> = {
+    [EAST]: DIRECTIONS.E,
+    [WEST]: DIRECTIONS.W,
+    [NORTH]: DIRECTIONS.N,
+    [SOUTH]: DIRECTIONS.S,
+}
 
 export class VehicleStateFactory {
     static createRover(initPosition: string = ""): RoverState {
@@ -19,18 +26,12 @@ export class VehicleStateFactory {
         const coordinate = parseInt(possibleCoordinate, 10);
 
         if (this.isValidCoordinate(coordinate)) {
-            return coordinate
+            return coordinate;
         }
     }
 
     private static mapToDirection(possibleDirection: string): Direction | undefined {
-        if (this.isValidDirection(possibleDirection)) {
-            return possibleDirection
-        }
-    }
-
-    private static isValidDirection(direction: string): direction is Direction {
-        return Object.values(DIRECTIONS).includes(direction as Direction);
+        return stringToDirectionMap[possibleDirection];
     }
 
     private static isValidCoordinate(position: number): boolean {
