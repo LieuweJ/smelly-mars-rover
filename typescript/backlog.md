@@ -40,7 +40,7 @@ Done:
 - Removed type command checking in handler to allow easier adding of new commands.
 - Removed logic duplication in Rover class.
 - Moved responsibility for valid "init inputs" to RoverState class.
-- ----- After 3 hours
+- ----- State after 3 hours
 - Make commandsHandler only work with a list of Commands.
 - Restore old behaviour: If Rover.constructor gets less than 3 params, it should generate rover in default position
 - Move initialPosition of RoverState mapping to Factory
@@ -50,6 +50,7 @@ Done:
 - Introduce VehicleState interface, so commandHandler can work with different vehicles.
 - Map string char to Command via Map.
 - Map string char to Direction via Map.
+- ----- State after 4 hours
 
 Not doing:
 
