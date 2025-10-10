@@ -34,9 +34,9 @@ export class Rover {
                 return;
             }
 
-            if (CommandLeft.shouldMove(command)) {
+            if (CommandLeft.shouldExecute(command)) {
                 CommandLeft.execute(this.roverState)
-            } else if (command === COMMAND_TURN_RIGHT) {
+            } else if (CommandRight.shouldExecute(command)) {
                 CommandRight.execute(this.roverState)
             } else if (command === COMMAND_MOVE) {
                 CommandMove.execute(this.roverState)

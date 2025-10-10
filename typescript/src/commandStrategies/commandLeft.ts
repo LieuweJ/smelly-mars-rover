@@ -1,7 +1,7 @@
 import {COMMAND_TURN_LEFT, COMMAND, EAST, NORTH, RoverState, SOUTH, WEST} from "../RoverState";
 
 export class CommandLeft {
-    static shouldMove(command: COMMAND): boolean {
+    static shouldExecute(command: COMMAND): boolean {
         return command === COMMAND_TURN_LEFT
     }
 
