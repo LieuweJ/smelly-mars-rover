@@ -3,9 +3,9 @@ Readablilty:
 
 Responsibility:
 
-Refine abstractions:
+- move setting roverState in rover.construction should move to commandHandler.
 
-- move commandHandling to separate class to handle commandProcessInterfaces.
+Refine abstractions:
 
 Doing:
 
@@ -36,6 +36,7 @@ Done:
 - Move check 'should' execute command Left to commandLeft class
 - Move check 'should' execute command Right to commandRight class
 - Move check 'should' execute command Move to commandForward class
+- move commandHandling to separate class to handle commandProcessInterfaces.
 
 Not doing:
 

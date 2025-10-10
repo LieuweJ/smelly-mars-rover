@@ -1,11 +1,13 @@
-import {COMMAND_TURN_LEFT, COMMAND, EAST, NORTH, RoverState, SOUTH, WEST} from "../RoverState";
+import {EAST, NORTH, RoverState, SOUTH, WEST} from "../../RoverState";
+import {COMMAND_TURN_LEFT, COMMAND, CommandStrategy} from "../commandsHandler";
 
-export class CommandLeft {
-    static shouldExecute(command: COMMAND): boolean {
+
+export class CommandLeft implements CommandStrategy {
+    shouldExecute(command: COMMAND): boolean {
         return command === COMMAND_TURN_LEFT
     }
 
-    static execute(roverState: RoverState) {
+    execute(roverState: RoverState) {
         if (roverState.isFacing(EAST)) {
             roverState.turnToNorth();
         } else if (roverState.isFacing(NORTH)) {

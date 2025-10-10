@@ -10,16 +10,6 @@ export const WEST = Direction.W;
 export const SOUTH = Direction.S;
 export const EAST = Direction.E;
 
-export enum COMMAND {
-    R = "R",
-    L = "L",
-    M = "M"
-}
-
-export const COMMAND_TURN_RIGHT = COMMAND.R;
-export const COMMAND_TURN_LEFT = COMMAND.L;
-export const COMMAND_MOVE = COMMAND.M;
-
 export class RoverState {
     eastWest: number = 0;
     northSouth: number = 0;

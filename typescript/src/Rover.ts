@@ -1,22 +1,12 @@
-import {
-    COMMAND_TURN_LEFT,
-    COMMAND_MOVE,
-    COMMAND_TURN_RIGHT,
-    EAST,
-    NORTH,
-    RoverState,
-    SOUTH,
-    WEST,
-    COMMAND
-} from "./RoverState";
-import {CommandLeft} from "./commandStrategies/commandLeft";
-import {CommandRight} from "./commandStrategies/commandRight";
-import {CommandMove} from "./commandStrategies/commandMove";
-
-const INVALID_COMMAND = "Invalid command";
+import {RoverState} from "./RoverState";
+import {CommandLeft} from "./commandHandling/strategies/commandLeft";
+import {CommandRight} from "./commandHandling/strategies/commandRight";
+import {CommandMove} from "./commandHandling/strategies/commandMove";
+import {CommandsHandler} from "./commandHandling/commandsHandler";
 
 export class Rover {
     private roverState: RoverState = new RoverState();
+    private commandsHandler = new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandMove()])
 
     constructor(initCommand: string = "") {
         const initParams = initCommand.split(" ");
@@ -28,28 +18,7 @@ export class Rover {
     }
 
     public go(commands: string): void {
-        for (let i = 0; i < commands.length; i++) {
-            const command = this.getCommand(commands[i]);
-            if (command === INVALID_COMMAND) {
-                return;
-            }
-
-            if (CommandLeft.shouldExecute(command)) {
-                CommandLeft.execute(this.roverState)
-            } else if (CommandRight.shouldExecute(command)) {
-                CommandRight.execute(this.roverState)
-            } else if (CommandMove.shouldExecute(command)) {
-                CommandMove.execute(this.roverState)
-            }
-        }
-    }
-
-    private getCommand(command: string): COMMAND | typeof INVALID_COMMAND {
-        if (command !== COMMAND_TURN_LEFT && command !== COMMAND_TURN_RIGHT && command !== COMMAND_MOVE) {
-            return INVALID_COMMAND
-        }
-
-        return command as COMMAND;
+        this.commandsHandler.handle(commands, this.roverState);
     }
 
     public G(commands: string): void {
