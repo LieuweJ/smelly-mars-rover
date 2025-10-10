@@ -60,4 +60,10 @@ describe("MarsRoverShould", () => {
         const rover = new Rover("4 5 S");
         expect(rover.pos()).toBe("4 5 S");
     })
+
+    test('When an invalid command is given, the rover does not move', () => {
+        const rover = new Rover("1 2 N");
+        rover.go("X");
+        expect(rover.pos()).toBe("1 2 N");
+    })
 });
