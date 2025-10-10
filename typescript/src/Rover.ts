@@ -32,7 +32,8 @@ export class Rover {
         }
       }
     }
-  
+
+    // method not covered by tests.
     public G(z: string): void {
       this.go(z[0]);
     }
