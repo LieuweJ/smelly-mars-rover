@@ -3,11 +3,11 @@ Readablilty:
 
 Responsibility:
 
-- move setting roverState in rover.construction should move to commandHandler.
-
 Refine abstractions:
 
 Doing:
+
+- move setting roverState in rover.construction should move its responsibilities.
 
 Done:
 

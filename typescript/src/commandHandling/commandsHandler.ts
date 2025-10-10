@@ -18,7 +18,7 @@ export type CommandStrategy = {
 const INVALID_COMMAND = "Invalid command";
 
 export class CommandsHandler {
-    private commandStrategies: CommandStrategy[];
+    private readonly commandStrategies: CommandStrategy[];
 
     constructor(commandStrategies: CommandStrategy[]) {
         this.commandStrategies = commandStrategies;
