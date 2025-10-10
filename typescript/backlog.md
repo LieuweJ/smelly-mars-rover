@@ -7,8 +7,6 @@ Refine abstractions:
 
 Doing:
 
-- move setting roverState in rover.construction should move its responsibilities.
-
 Done:
 
 - add coverage script
@@ -37,6 +35,7 @@ Done:
 - Move check 'should' execute command Right to commandRight class
 - Move check 'should' execute command Move to commandForward class
 - move commandHandling to separate class to handle commandProcessInterfaces.
+- move setting roverState in rover.construction should move its responsibilities to Rover.
 
 Not doing:
 
