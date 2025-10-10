@@ -46,6 +46,8 @@ Done:
 - Move initialPosition of RoverState mapping to Factory
 - Move 'create initialPosition' to Factory class.
 - Add support for multiple rovers handling the same command list.
+- Add support for different RoverStateInterfaces
+- Introduce VehicleState interface, so commandHandler can work with different vehicles.
 
 Not doing:
 

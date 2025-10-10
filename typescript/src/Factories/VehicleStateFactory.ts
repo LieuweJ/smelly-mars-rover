@@ -1,7 +1,7 @@
 import {Direction, DIRECTIONS, RoverState} from "../RoverState";
 
-export class RoverStateFactory {
-    static create(initPosition: string = ""): RoverState {
+export class VehicleStateFactory {
+    static createRover(initPosition: string = ""): RoverState {
         const startingPositions = initPosition.split(" ");
 
         if (startingPositions.length < 3) {

@@ -1,6 +1,6 @@
 import {Rover} from '../src/Rover';
 import {CommandsFactory} from "../src/Factories/CommandsFactory";
-import {RoverStateFactory} from "../src/Factories/RoverStateFactory";
+import {VehicleStateFactory} from "../src/Factories/VehicleStateFactory";
 
 describe("MarsRoverShould", () => {
     test.each([
@@ -80,8 +80,8 @@ describe("MarsRoverShould", () => {
         expect(rover.pos()).toBe(initialPosition);
     })
 
-    test('RoverStateFactory', () => {
-        const result = RoverStateFactory.create();
+    test('Create RoverState without init position', () => {
+        const result = VehicleStateFactory.createRover();
 
         expect(result.printCurrentPosition()).toBe('0 0 N')
     })

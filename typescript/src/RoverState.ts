@@ -12,7 +12,29 @@ export const WEST = DIRECTIONS.W;
 export const SOUTH = DIRECTIONS.S;
 export const EAST = DIRECTIONS.E;
 
-export class RoverState {
+export interface VehicleState {
+    isFacing(direction: Direction): boolean;
+
+    moveOneNorth(): void;
+
+    moveOneWest(): void;
+
+    moveOneSouth(): void;
+
+    moveOneEast(): void;
+
+    turnToEast(): void;
+
+    turnToSouth(): void;
+
+    turnToWest(): void;
+
+    turnToNorth(): void;
+
+    printCurrentPosition(): string;
+}
+
+export class RoverState implements VehicleState {
     eastWest: number;
     northSouth: number;
     frontFacing: string;
