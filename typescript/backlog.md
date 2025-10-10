@@ -50,6 +50,8 @@ Done:
 - Introduce VehicleState interface, so commandHandler can work with different vehicles.
 - Map string char to Command via Map.
 - Map string char to Direction via Map.
+- Changed const DIRECTIONS to enum Directions
+- Cleanup.
 - ----- State after 4 hours
 
 Not doing:

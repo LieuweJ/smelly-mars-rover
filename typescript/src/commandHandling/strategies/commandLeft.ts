@@ -10,12 +10,24 @@ export class CommandLeft implements CommandStrategy {
     execute(roverState: VehicleState) {
         if (roverState.isFacing(EAST)) {
             roverState.turnToNorth();
-        } else if (roverState.isFacing(NORTH)) {
+            return;
+        }
+
+        if (roverState.isFacing(NORTH)) {
             roverState.turnToWest();
-        } else if (roverState.isFacing(WEST)) {
+            return;
+        }
+
+        if (roverState.isFacing(WEST)) {
             roverState.turnToSouth();
-        } else if (roverState.isFacing(SOUTH)) {
+
+            return;
+        }
+
+        if (roverState.isFacing(SOUTH)) {
             roverState.turnToEast();
+
+            return;
         }
     }
 }

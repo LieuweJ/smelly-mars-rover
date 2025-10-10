@@ -1,16 +1,14 @@
-export const DIRECTIONS = {
-    N: "N",
-    E: "E",
-    S: "S",
-    W: "W",
-} as const;
+export enum Direction {
+    N = 'N',
+    E = 'E',
+    S = 'S',
+    W = 'W',
+}
 
-export type Direction = typeof DIRECTIONS[keyof typeof DIRECTIONS];
-
-export const NORTH = DIRECTIONS.N;
-export const WEST = DIRECTIONS.W;
-export const SOUTH = DIRECTIONS.S;
-export const EAST = DIRECTIONS.E;
+export const NORTH = Direction.N;
+export const WEST = Direction.W;
+export const SOUTH = Direction.S;
+export const EAST = Direction.E;
 
 export interface VehicleState {
     isFacing(direction: Direction): boolean;

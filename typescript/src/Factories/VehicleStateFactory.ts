@@ -1,10 +1,10 @@
-import {Direction, DIRECTIONS, EAST, NORTH, RoverState, SOUTH, WEST} from "../RoverState";
+import {Direction, EAST, NORTH, RoverState, SOUTH, WEST} from "../RoverState";
 
 const stringToDirectionMap: Record<string, Direction> = {
-    [EAST]: DIRECTIONS.E,
-    [WEST]: DIRECTIONS.W,
-    [NORTH]: DIRECTIONS.N,
-    [SOUTH]: DIRECTIONS.S,
+    [EAST]: Direction.E,
+    [WEST]: Direction.W,
+    [NORTH]: Direction.N,
+    [SOUTH]: Direction.S,
 }
 
 export class VehicleStateFactory {
