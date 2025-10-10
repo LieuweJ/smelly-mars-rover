@@ -36,7 +36,7 @@ export class CommandsHandler {
         }
     }
 
-    private handleCommand(command: COMMAND.R | COMMAND.L | COMMAND.M, roverState: RoverState) {
+    private handleCommand(command: COMMAND, roverState: RoverState) {
         for (const strategy of this.commandStrategies) {
             if (strategy.shouldExecute(command)) {
                 strategy.execute(roverState);
