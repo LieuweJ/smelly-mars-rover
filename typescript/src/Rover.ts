@@ -27,10 +27,10 @@ export class Rover {
           else if (this.roverState.frontFacing === WEST) { this.roverState.frontFacing = NORTH; }
           else if (this.roverState.frontFacing === NORTH) { this.roverState.frontFacing = EAST; }
         } else if (command === COMMAND_MOVE) {
-          if (this.roverState.frontFacing === EAST)      { this.roverState.eastWest++; }
-          if (this.roverState.frontFacing === SOUTH)      { this.roverState.northSouth--; }
-          if (this.roverState.frontFacing === WEST)      { this.roverState.eastWest--; }
-          if (this.roverState.frontFacing === NORTH)      { this.roverState.northSouth++; }
+          if (this.roverState.frontFacing === EAST)      { this.roverState.moveOneEast(); }
+          if (this.roverState.frontFacing === SOUTH)      { this.roverState.moveOneSouth(); }
+          if (this.roverState.frontFacing === WEST)      { this.roverState.moveOneWest(); }
+          if (this.roverState.frontFacing === NORTH)      { this.roverState.moveOneNorth(); }
         }
       }
     }

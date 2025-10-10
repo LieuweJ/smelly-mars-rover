@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1760076082745" clover="3.2.0">
-  <project timestamp="1760076082745" name="All files">
-    <metrics statements="48" coveredstatements="48" conditionals="29" coveredconditionals="29" methods="8" coveredmethods="8" elements="85" coveredelements="85" complexity="0" loc="48" ncloc="48" packages="1" files="2" classes="2"/>
+<coverage generated="1760076547003" clover="3.2.0">
+  <project timestamp="1760076547003" name="All files">
+    <metrics statements="52" coveredstatements="52" conditionals="29" coveredconditionals="29" methods="12" coveredmethods="12" elements="93" coveredelements="93" complexity="0" loc="52" ncloc="52" packages="1" files="2" classes="2"/>
     <file name="Rover.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/Rover.ts">
       <metrics statements="28" coveredstatements="28" conditionals="25" coveredconditionals="25" methods="5" coveredmethods="5"/>
       <line num="1" count="1" type="stmt"/>
@@ -34,7 +34,7 @@
       <line num="47" count="20" type="stmt"/>
     </file>
     <file name="RoverState.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/RoverState.ts">
-      <metrics statements="20" coveredstatements="20" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <metrics statements="24" coveredstatements="24" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="7"/>
       <line num="1" count="1" type="cond" truecount="2" falsecount="0"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
@@ -55,6 +55,10 @@
       <line num="24" count="21" type="stmt"/>
       <line num="25" count="21" type="stmt"/>
       <line num="26" count="21" type="stmt"/>
+      <line num="29" count="3" type="stmt"/>
+      <line num="33" count="3" type="stmt"/>
+      <line num="37" count="4" type="stmt"/>
+      <line num="41" count="6" type="stmt"/>
     </file>
   </project>
 </coverage>

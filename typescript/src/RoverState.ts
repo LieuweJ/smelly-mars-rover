@@ -24,4 +24,20 @@ export class RoverState {
     eastWest: number = 0;
     northSouth: number = 0;
     frontFacing: string = NORTH;
+
+    moveOneNorth() {
+        this.northSouth++;
+    }
+
+    moveOneWest() {
+        this.eastWest--;
+    }
+
+    moveOneSouth() {
+        this.northSouth--;
+    }
+
+    moveOneEast() {
+        this.eastWest++;
+    }
 } 

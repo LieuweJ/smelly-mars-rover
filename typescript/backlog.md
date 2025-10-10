@@ -2,13 +2,12 @@ To Do:
 Readablilty:
 
 Responsibility:
-- Move setting and getting rover position to RoverState
+- move set turning roverState to roverState
 
 Refine abstractions:
 - Move coordination handling in rover.go into separate classes/function.
 
 Doing:
-
 
 Done:
 - add coverage script
@@ -22,6 +21,7 @@ Done:
 - Use Enum for coordinates
 - Use Enum for commands
 - rename rover.rs to rover.roverState
+- Move setting and getting rover position to RoverState
 
 Not doing:
 - add README with docs (already in main root of project)
