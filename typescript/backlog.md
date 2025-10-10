@@ -1,7 +1,5 @@
 To Do:
 Readablilty:
-- Rename coordinates in roverState
-- Rename command params in rover.go
 - Rename params in rover.constructor
 - Use Enum for coordinates
 - handle uncovered lines in tst coverage
@@ -14,6 +12,7 @@ Refine abstractions:
 
 Doing:
 
+
 Done:
 - add coverage script
 - add test for rover.G
@@ -21,6 +20,7 @@ Done:
 - move code in classes, remove unused comments.
 - Rename coordinates in roverState
 - Rename direction in roverState
+- Rename command params in rover.go
 
 Not doing:
 - add README with docs (already in main root of project)
