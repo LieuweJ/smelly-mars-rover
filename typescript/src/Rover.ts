@@ -1,14 +1,14 @@
 import {COMMAND_LEFT, COMMAND_MOVE, COMMAND_RIGHT, EAST, NORTH, RoverState, SOUTH, WEST} from "./RoverState";
 
 export class Rover {
-    private rs: RoverState = new RoverState();
+    private roverState: RoverState = new RoverState();
   
     constructor(initCommand: string = "") {
       const initParams = initCommand.split(" ");
       if (initParams.length >= 3) {
-        this.rs.eastWest = parseInt(initParams[0], 10);
-        this.rs.northSouth = parseInt(initParams[1], 10);
-        this.rs.frontFacing = initParams[2][0];
+        this.roverState.eastWest = parseInt(initParams[0], 10);
+        this.roverState.northSouth = parseInt(initParams[1], 10);
+        this.roverState.frontFacing = initParams[2][0];
       }
     }
   
@@ -17,20 +17,20 @@ export class Rover {
         const command = commands[i];
 
           if (command === COMMAND_LEFT) {
-          if (this.rs.frontFacing === EAST)      { this.rs.frontFacing = NORTH; }
-          else if (this.rs.frontFacing === NORTH) { this.rs.frontFacing = WEST; }
-          else if (this.rs.frontFacing === WEST) { this.rs.frontFacing = SOUTH; }
-          else if (this.rs.frontFacing === SOUTH) { this.rs.frontFacing = EAST; }
+          if (this.roverState.frontFacing === EAST)      { this.roverState.frontFacing = NORTH; }
+          else if (this.roverState.frontFacing === NORTH) { this.roverState.frontFacing = WEST; }
+          else if (this.roverState.frontFacing === WEST) { this.roverState.frontFacing = SOUTH; }
+          else if (this.roverState.frontFacing === SOUTH) { this.roverState.frontFacing = EAST; }
         } else if (command === COMMAND_RIGHT) {
-          if (this.rs.frontFacing === EAST)      { this.rs.frontFacing = SOUTH; }
-          else if (this.rs.frontFacing === SOUTH) { this.rs.frontFacing = WEST; }
-          else if (this.rs.frontFacing === WEST) { this.rs.frontFacing = NORTH; }
-          else if (this.rs.frontFacing === NORTH) { this.rs.frontFacing = EAST; }
+          if (this.roverState.frontFacing === EAST)      { this.roverState.frontFacing = SOUTH; }
+          else if (this.roverState.frontFacing === SOUTH) { this.roverState.frontFacing = WEST; }
+          else if (this.roverState.frontFacing === WEST) { this.roverState.frontFacing = NORTH; }
+          else if (this.roverState.frontFacing === NORTH) { this.roverState.frontFacing = EAST; }
         } else if (command === COMMAND_MOVE) {
-          if (this.rs.frontFacing === EAST)      { this.rs.eastWest++; }
-          if (this.rs.frontFacing === SOUTH)      { this.rs.northSouth--; }
-          if (this.rs.frontFacing === WEST)      { this.rs.eastWest--; }
-          if (this.rs.frontFacing === NORTH)      { this.rs.northSouth++; }
+          if (this.roverState.frontFacing === EAST)      { this.roverState.eastWest++; }
+          if (this.roverState.frontFacing === SOUTH)      { this.roverState.northSouth--; }
+          if (this.roverState.frontFacing === WEST)      { this.roverState.eastWest--; }
+          if (this.roverState.frontFacing === NORTH)      { this.roverState.northSouth++; }
         }
       }
     }
@@ -40,7 +40,7 @@ export class Rover {
     }
   
     public get XYD(): string {
-      return `${this.rs.eastWest} ${this.rs.northSouth} ${this.rs.frontFacing}`;
+      return `${this.roverState.eastWest} ${this.roverState.northSouth} ${this.roverState.frontFacing}`;
     }
 
     public pos(): string {

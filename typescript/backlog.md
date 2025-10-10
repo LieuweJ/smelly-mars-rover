@@ -1,6 +1,5 @@
 To Do:
 Readablilty:
-- rename rover.rs to rover.vehicleState
 
 Responsibility:
 - Move setting and getting rover position to RoverState
@@ -22,6 +21,7 @@ Done:
 - Rename params in rover.constructor
 - Use Enum for coordinates
 - Use Enum for commands
+- rename rover.rs to rover.roverState
 
 Not doing:
 - add README with docs (already in main root of project)
