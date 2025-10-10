@@ -22,15 +22,13 @@ export class CommandsHandler {
         this.commandStrategies = commandStrategies;
     }
 
-    handle(commands: string, roverState: RoverState) {
-        for (let i = 0; i < commands.length; i++) {
-            const command = commands[i];
-
+    handle(commands: COMMAND[], roverState: RoverState) {
+        for (const command of commands) {
             this.handleCommand(command, roverState);
         }
     }
 
-    private handleCommand(command: string, roverState: RoverState) {
+    private handleCommand(command: COMMAND, roverState: RoverState) {
         for (const strategy of this.commandStrategies) {
             if (strategy.shouldExecute(command)) {
                 strategy.execute(roverState);

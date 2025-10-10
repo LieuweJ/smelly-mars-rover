@@ -3,6 +3,7 @@ import {CommandLeft} from "./commandHandling/strategies/commandLeft";
 import {CommandRight} from "./commandHandling/strategies/commandRight";
 import {CommandMove} from "./commandHandling/strategies/commandMove";
 import {CommandsHandler} from "./commandHandling/commandsHandler";
+import {StringToCommandsHandler} from "./commandHandling/stringToCommands";
 
 export class Rover {
     private roverState: RoverState;
@@ -29,10 +30,18 @@ export class Rover {
     }
 
     public go(commands: string): void {
-        this.commandsHandler.handle(commands, this.roverState);
+        this.commandsHandler.handle(
+            StringToCommandsHandler.parse(commands),
+            this.roverState
+        );
     }
 
     public G(commands: string): void {
+        // techDebt: Should Rover.G also empty string? (ticketNumber 124)
+        if (!commands[0]) {
+            throw new Error('Cannot read properties of undefined (reading \'length\')')
+        }
+
         this.go(commands[0]);
     }
 
