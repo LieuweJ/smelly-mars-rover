@@ -36,6 +36,7 @@ Done:
 - Move check 'should' execute command Move to commandForward class
 - move commandHandling to separate class to handle commandProcessInterfaces.
 - move setting roverState in rover.construction should move its responsibilities to Rover.
+- cleanup
 
 Not doing:
 

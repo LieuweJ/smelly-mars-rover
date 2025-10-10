@@ -12,13 +12,13 @@ export class Rover {
         const startingPositions = initPosition.split(" ");
 
         this.roverState = new RoverState(
-            this.getEastWestCoordinate(startingPositions[0]),
-            this.getNorthSouthCoordinate(startingPositions[1]),
-            this.getFacingDirection(startingPositions[2])
+            this.mapToEastWest(startingPositions[0]),
+            this.mapToNorthSouth(startingPositions[1]),
+            this.mapToDirection(startingPositions[2])
         )
     }
 
-    private getEastWestCoordinate(possibleCoordinate: string): number | undefined {
+    private mapToEastWest(possibleCoordinate: string): number | undefined {
         const possibleEastWest = parseInt(possibleCoordinate, 10);
         if (isNaN(possibleEastWest)) {
             return undefined;
@@ -27,7 +27,7 @@ export class Rover {
         return parseInt(possibleCoordinate, 10);
     }
 
-    private getNorthSouthCoordinate(possibleCoordinate: string): number | undefined {
+    private mapToNorthSouth(possibleCoordinate: string): number | undefined {
         const possibleNorthSouth = parseInt(possibleCoordinate, 10);
         if (isNaN(possibleNorthSouth)) {
             return undefined;
@@ -36,7 +36,7 @@ export class Rover {
         return parseInt(possibleCoordinate, 10);
     }
 
-    private getFacingDirection(possibleDirection: string): Direction | undefined {
+    private mapToDirection(possibleDirection: string): Direction | undefined {
         if (RoverState.isValidDirection(possibleDirection)) {
             return possibleDirection;
         }
