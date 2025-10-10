@@ -4,9 +4,13 @@ Readablilty:
 Responsibility:
 
 Refine abstractions:
-- Move coordination handling in rover.go into separate classes/function.
+
+- Move commandRight handling to separate class with commandProcessInterface
+- Move commandForward handling to separate class with commandProcessInterface
+- move commandHandling to separate class to handle commandProcessInterfaces.
 
 Doing:
+- Move commandLeft handling to separate class with commandProcessInterface
 
 Done:
 - add coverage script
