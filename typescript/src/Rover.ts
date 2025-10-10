@@ -17,7 +17,7 @@ export class Rover {
     public go(commands: string): void {
         this.commandsHandler.handle(
             CommandsFactory.fromString(commands),
-            this.roverState
+            [this.roverState]
         );
     }
 

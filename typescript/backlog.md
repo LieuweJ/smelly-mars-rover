@@ -45,6 +45,7 @@ Done:
 - Restore old behaviour: If Rover.constructor gets less than 3 params, it should generate rover in default position
 - Move initialPosition of RoverState mapping to Factory
 - Move 'create initialPosition' to Factory class.
+- Add support for multiple rovers handling the same command list.
 
 Not doing:
 
