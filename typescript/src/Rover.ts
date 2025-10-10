@@ -40,11 +40,14 @@ export class Rover {
     }
   
     public get XYD(): string {
+        // logging is part of techDebt analysis point 1 (ticketNumber 123)
+        console.log('XYD called');
         return this.roverState.printCurrentPosition()
-      // return `${this.roverState.eastWest} ${this.roverState.northSouth} ${this.roverState.frontFacing}`;
     }
 
     public pos(): string {
-      return this.XYD;
+        // logging is part of techDebt analysis point 1 (ticketNumber 123)
+        console.log('Pos called');
+        return this.roverState.printCurrentPosition()
     }
   }

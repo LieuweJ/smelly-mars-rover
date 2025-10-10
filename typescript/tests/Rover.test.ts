@@ -36,6 +36,7 @@ describe("MarsRoverShould", () => {
             const rover = new Rover(startingPosition);
             rover.G(instructions);
             expect(rover.pos()).toBe(expectedOutput);
+            expect(rover.XYD).toBe(expectedOutput);
         }
     );
 

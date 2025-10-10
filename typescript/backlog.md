@@ -2,7 +2,6 @@ To Do:
 Readablilty:
 
 Responsibility:
--move get position to ROver
 
 Refine abstractions:
 - Move coordination handling in rover.go into separate classes/function.
@@ -25,6 +24,9 @@ Done:
 - Move set turning roverState to roverState
 - move 'get current frontFacing' to roverState
 - changed param G.z to G.commands
+- move get position to Rover
+- Added techDebt.md
+- Added logging of usage.
 
 Not doing:
 - add README with docs (already in main root of project)
