@@ -38,7 +38,7 @@ export class Rover {
                 CommandLeft.execute(this.roverState)
             } else if (CommandRight.shouldExecute(command)) {
                 CommandRight.execute(this.roverState)
-            } else if (command === COMMAND_MOVE) {
+            } else if (CommandMove.shouldExecute(command)) {
                 CommandMove.execute(this.roverState)
             }
         }

@@ -1,6 +1,10 @@
-import {EAST, NORTH, RoverState, SOUTH, WEST} from "../RoverState";
+import {COMMAND, COMMAND_MOVE, EAST, NORTH, RoverState, SOUTH, WEST} from "../RoverState";
 
 export class CommandMove {
+    static shouldExecute(command: COMMAND): boolean {
+        return command === COMMAND_MOVE
+    }
+
     static execute(roverState: RoverState) {
         if (roverState.isFacing(EAST)) {
             roverState.moveOneEast();

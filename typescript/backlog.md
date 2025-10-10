@@ -5,8 +5,6 @@ Responsibility:
 
 Refine abstractions:
 
-- Move check 'should' execute command Right to commandRight class
-- Move check 'should' execute command Move to commandForward class
 - move commandHandling to separate class to handle commandProcessInterfaces.
 
 Doing:
@@ -36,6 +34,8 @@ Done:
 - Move commandForward handling to separate class with commandProcessInterface
 - rename comand_left and command_right to command_turn_left/right
 - Move check 'should' execute command Left to commandLeft class
+- Move check 'should' execute command Right to commandRight class
+- Move check 'should' execute command Move to commandForward class
 
 Not doing:
 
