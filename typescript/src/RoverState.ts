@@ -25,6 +25,10 @@ export class RoverState {
     northSouth: number = 0;
     frontFacing: string = NORTH;
 
+    isFacing(direction: Direction) {
+        return this.frontFacing === direction;
+    }
+
     moveOneNorth() {
         this.northSouth++;
     }
@@ -39,5 +43,21 @@ export class RoverState {
 
     moveOneEast() {
         this.eastWest++;
+    }
+
+    turnToEast() {
+        this.frontFacing = EAST;
+    }
+
+    turnToSouth() {
+        this.frontFacing = SOUTH;
+    }
+
+    turnToWest() {
+        this.frontFacing = WEST;
+    }
+
+    turnToNorth() {
+        this.frontFacing = NORTH;
     }
 } 

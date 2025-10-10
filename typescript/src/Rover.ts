@@ -17,20 +17,20 @@ export class Rover {
         const command = commands[i];
 
           if (command === COMMAND_LEFT) {
-          if (this.roverState.frontFacing === EAST)      { this.roverState.frontFacing = NORTH; }
-          else if (this.roverState.frontFacing === NORTH) { this.roverState.frontFacing = WEST; }
-          else if (this.roverState.frontFacing === WEST) { this.roverState.frontFacing = SOUTH; }
-          else if (this.roverState.frontFacing === SOUTH) { this.roverState.frontFacing = EAST; }
+          if (this.roverState.isFacing(EAST))      { this.roverState.turnToNorth(); }
+          else if (this.roverState.isFacing(NORTH)) { this.roverState.turnToWest(); }
+          else if (this.roverState.isFacing(WEST)) { this.roverState.turnToSouth(); }
+          else if (this.roverState.isFacing(SOUTH)) { this.roverState.turnToEast(); }
         } else if (command === COMMAND_RIGHT) {
-          if (this.roverState.frontFacing === EAST)      { this.roverState.frontFacing = SOUTH; }
-          else if (this.roverState.frontFacing === SOUTH) { this.roverState.frontFacing = WEST; }
-          else if (this.roverState.frontFacing === WEST) { this.roverState.frontFacing = NORTH; }
-          else if (this.roverState.frontFacing === NORTH) { this.roverState.frontFacing = EAST; }
+          if (this.roverState.isFacing(EAST))      { this.roverState.turnToSouth(); }
+          else if (this.roverState.isFacing(SOUTH)) { this.roverState.turnToWest(); }
+          else if (this.roverState.isFacing(WEST)) { this.roverState.turnToNorth(); }
+          else if (this.roverState.isFacing(NORTH)) { this.roverState.turnToEast() }
         } else if (command === COMMAND_MOVE) {
-          if (this.roverState.frontFacing === EAST)      { this.roverState.moveOneEast(); }
-          if (this.roverState.frontFacing === SOUTH)      { this.roverState.moveOneSouth(); }
-          if (this.roverState.frontFacing === WEST)      { this.roverState.moveOneWest(); }
-          if (this.roverState.frontFacing === NORTH)      { this.roverState.moveOneNorth(); }
+          if (this.roverState.isFacing(EAST))      { this.roverState.moveOneEast(); }
+          if (this.roverState.isFacing(SOUTH))      { this.roverState.moveOneSouth(); }
+          if (this.roverState.isFacing(WEST))      { this.roverState.moveOneWest(); }
+          if (this.roverState.isFacing(NORTH))      { this.roverState.moveOneNorth(); }
         }
       }
     }

@@ -2,7 +2,6 @@ To Do:
 Readablilty:
 
 Responsibility:
-- move set turning roverState to roverState
 
 Refine abstractions:
 - Move coordination handling in rover.go into separate classes/function.
@@ -22,6 +21,8 @@ Done:
 - Use Enum for commands
 - rename rover.rs to rover.roverState
 - Move setting and getting rover position to RoverState
+- Move set turning roverState to roverState
+- move 'get current frontFacing' to roverState
 
 Not doing:
 - add README with docs (already in main root of project)
