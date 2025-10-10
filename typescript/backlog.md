@@ -1,6 +1,5 @@
 To Do:
 Readablilty:
-- add README with docs
 - Rename coordinates in roverState
 - Rename command params in rover.go
 - Rename params in rover.constructor
@@ -20,3 +19,8 @@ Done:
 - add test for rover.G
 - add test for rover constructor
 - move code in classes, remove unused comments.
+- Rename coordinates in roverState
+- Rename direction in roverState
+
+Not doing:
+- add README with docs (already in main root of project)

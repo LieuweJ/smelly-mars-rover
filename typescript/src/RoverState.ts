@@ -1,5 +1,5 @@
 export class RoverState {
-    xx: number = 0;
-    yy: number = 0;
-    dd: string = "N";
+    eastWest: number = 0;
+    northSouth: number = 0;
+    frontFacing: string = "N";
 } 
