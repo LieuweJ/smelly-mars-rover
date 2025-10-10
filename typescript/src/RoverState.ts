@@ -27,6 +27,10 @@ export class RoverState {
         return Object.values(DIRECTIONS).includes(direction as Direction);
     }
 
+    static isValidCoordinate(position: number): boolean {
+        return !isNaN(position);
+    }
+
     isFacing(direction: Direction) {
         return this.frontFacing === direction;
     }

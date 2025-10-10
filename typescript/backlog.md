@@ -38,6 +38,8 @@ Done:
 - move setting roverState in rover.construction should move its responsibilities to Rover.
 - cleanup
 - Removed type command checking in handler to allow easier adding of new commands.
+- Removed logic duplication in Rover class.
+- Moved responsibility for valid "init inputs" to RoverState class.
 
 Not doing:
 
