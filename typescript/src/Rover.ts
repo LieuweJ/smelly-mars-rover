@@ -1,6 +1,7 @@
 import { RoverState } from "./RoverState";
   
 export class Rover {
+    private rs: RoverState = new RoverState();
   
     constructor(p: string = "") {
       const s = p.split(" ");
@@ -45,6 +46,4 @@ export class Rover {
     public pos(): string {
       return this.XYD;
     }
-
-    private rs: RoverState = new RoverState();
   }

@@ -1,6 +1,5 @@
 To Do:
 Readablilty:
-- move code in classes, remove unused comments.
 - add README with docs
 - Rename coordinates in roverState
 - Rename command params in rover.go
@@ -20,3 +19,4 @@ Done:
 - add coverage script
 - add test for rover.G
 - add test for rover constructor
+- move code in classes, remove unused comments.
