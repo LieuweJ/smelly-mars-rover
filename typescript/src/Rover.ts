@@ -1,4 +1,4 @@
-import {RoverState, VehicleState} from "./RoverState";
+import {VehicleState} from "./RoverState";
 import {CommandLeft} from "./commandHandling/strategies/commandLeft";
 import {CommandRight} from "./commandHandling/strategies/commandRight";
 import {CommandMove} from "./commandHandling/strategies/commandMove";

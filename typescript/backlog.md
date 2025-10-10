@@ -48,6 +48,7 @@ Done:
 - Add support for multiple rovers handling the same command list.
 - Add support for different RoverStateInterfaces
 - Introduce VehicleState interface, so commandHandler can work with different vehicles.
+- Map string char to Command via Map.
 
 Not doing:
 
