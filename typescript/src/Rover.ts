@@ -1,5 +1,5 @@
-import { RoverState } from "./RoverState";
-  
+import {COMMAND_LEFT, COMMAND_MOVE, COMMAND_RIGHT, EAST, NORTH, RoverState, SOUTH, WEST} from "./RoverState";
+
 export class Rover {
     private rs: RoverState = new RoverState();
   
@@ -15,26 +15,26 @@ export class Rover {
     public go(commands: string): void {
       for (let i = 0; i < commands.length; i++) {
         const command = commands[i];
-        if (command === "L") {
-          if (this.rs.frontFacing === "E")      { this.rs.frontFacing = "N"; }
-          else if (this.rs.frontFacing === "N") { this.rs.frontFacing = "W"; }
-          else if (this.rs.frontFacing === "W") { this.rs.frontFacing = "S"; }
-          else if (this.rs.frontFacing === "S") { this.rs.frontFacing = "E"; }
-        } else if (command === "R") {
-          if (this.rs.frontFacing === "E")      { this.rs.frontFacing = "S"; }
-          else if (this.rs.frontFacing === "S") { this.rs.frontFacing = "W"; }
-          else if (this.rs.frontFacing === "W") { this.rs.frontFacing = "N"; }
-          else if (this.rs.frontFacing === "N") { this.rs.frontFacing = "E"; }
-        } else if (command === "M") {
-          if (this.rs.frontFacing === "E")      { this.rs.eastWest++; }
-          if (this.rs.frontFacing === "S")      { this.rs.northSouth--; }
-          if (this.rs.frontFacing === "W")      { this.rs.eastWest--; }
-          if (this.rs.frontFacing === "N")      { this.rs.northSouth++; }
+
+          if (command === COMMAND_LEFT) {
+          if (this.rs.frontFacing === EAST)      { this.rs.frontFacing = NORTH; }
+          else if (this.rs.frontFacing === NORTH) { this.rs.frontFacing = WEST; }
+          else if (this.rs.frontFacing === WEST) { this.rs.frontFacing = SOUTH; }
+          else if (this.rs.frontFacing === SOUTH) { this.rs.frontFacing = EAST; }
+        } else if (command === COMMAND_RIGHT) {
+          if (this.rs.frontFacing === EAST)      { this.rs.frontFacing = SOUTH; }
+          else if (this.rs.frontFacing === SOUTH) { this.rs.frontFacing = WEST; }
+          else if (this.rs.frontFacing === WEST) { this.rs.frontFacing = NORTH; }
+          else if (this.rs.frontFacing === NORTH) { this.rs.frontFacing = EAST; }
+        } else if (command === COMMAND_MOVE) {
+          if (this.rs.frontFacing === EAST)      { this.rs.eastWest++; }
+          if (this.rs.frontFacing === SOUTH)      { this.rs.northSouth--; }
+          if (this.rs.frontFacing === WEST)      { this.rs.eastWest--; }
+          if (this.rs.frontFacing === NORTH)      { this.rs.northSouth++; }
         }
       }
     }
 
-    // method not covered by tests.
     public G(z: string): void {
       this.go(z[0]);
     }

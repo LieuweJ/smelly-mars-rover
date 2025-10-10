@@ -1,6 +1,6 @@
 To Do:
 Readablilty:
-- Use Enum for coordinates
+- rename rover.rs to rover.vehicleState
 
 Responsibility:
 - Move setting and getting rover position to RoverState
@@ -9,6 +9,7 @@ Refine abstractions:
 - Move coordination handling in rover.go into separate classes/function.
 
 Doing:
+
 
 Done:
 - add coverage script
@@ -19,6 +20,8 @@ Done:
 - Rename direction in roverState
 - Rename command params in rover.go
 - Rename params in rover.constructor
+- Use Enum for coordinates
+- Use Enum for commands
 
 Not doing:
 - add README with docs (already in main root of project)
