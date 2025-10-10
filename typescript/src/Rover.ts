@@ -1,6 +1,7 @@
 import {COMMAND_LEFT, COMMAND_MOVE, COMMAND_RIGHT, EAST, NORTH, RoverState, SOUTH, WEST} from "./RoverState";
 import {CommandLeft} from "./commandStrategies/commandLeft";
 import {CommandRight} from "./commandStrategies/commandRight";
+import {CommandMove} from "./commandStrategies/commandMove";
 
 export class Rover {
     private roverState: RoverState = new RoverState();
@@ -27,18 +28,7 @@ export class Rover {
                 // else if (this.roverState.isFacing(WEST)) { this.roverState.turnToNorth(); }
                 // else if (this.roverState.isFacing(NORTH)) { this.roverState.turnToEast() }
             } else if (command === COMMAND_MOVE) {
-                if (this.roverState.isFacing(EAST)) {
-                    this.roverState.moveOneEast();
-                }
-                if (this.roverState.isFacing(SOUTH)) {
-                    this.roverState.moveOneSouth();
-                }
-                if (this.roverState.isFacing(WEST)) {
-                    this.roverState.moveOneWest();
-                }
-                if (this.roverState.isFacing(NORTH)) {
-                    this.roverState.moveOneNorth();
-                }
+                CommandMove.execute(this.roverState)
             }
         }
     }
