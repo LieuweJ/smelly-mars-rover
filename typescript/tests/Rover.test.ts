@@ -66,4 +66,15 @@ describe("MarsRoverShould", () => {
         rover.go("X");
         expect(rover.pos()).toBe("1 2 N");
     })
+
+    test('When initing the Rover Class without full initial position, roverState is "0 0 N",', () => {
+        const rover = new Rover("1 2");
+        expect(rover.pos()).toBe("0 0 N");
+    })
+
+    test('When initing the Rover Class with invalid initial position, roverState is the initial position,', () => {
+        const initialPosition = "3 5 S";
+        const rover = new Rover(initialPosition);
+        expect(rover.pos()).toBe(initialPosition);
+    })
 });

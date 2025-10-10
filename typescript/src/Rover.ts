@@ -12,6 +12,15 @@ export class Rover {
     constructor(initPosition: string = "") {
         const startingPositions = initPosition.split(" ");
 
+        if (startingPositions.length < 3) {
+            console.log('hier', startingPositions)
+            this.roverState = new RoverState();
+
+            return;
+        }
+
+        console.log('daar', startingPositions)
+
         this.roverState = new RoverState(
             this.mapToCoordinate(startingPositions[0]),
             this.mapToCoordinate(startingPositions[1]),
@@ -22,11 +31,15 @@ export class Rover {
     private mapToCoordinate(possibleCoordinate: string): number | undefined {
         const coordinate = parseInt(possibleCoordinate, 10);
 
-        return RoverState.isValidCoordinate(coordinate) ? coordinate : undefined;
+        if (RoverState.isValidCoordinate(coordinate)) {
+            return coordinate
+        }
     }
 
     private mapToDirection(possibleDirection: string): Direction | undefined {
-        return RoverState.isValidDirection(possibleDirection) ? possibleDirection : undefined;
+        if (RoverState.isValidDirection(possibleDirection)) {
+            return possibleDirection
+        }
     }
 
     public go(commands: string): void {

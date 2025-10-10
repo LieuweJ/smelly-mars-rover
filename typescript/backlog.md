@@ -7,8 +7,6 @@ Refine abstractions:
 
 Doing:
 
-- Restore old behaviour: If Rover.constructor gets less than 3 params, it should generate rover in default position
-
 Done:
 
 - add coverage script
@@ -44,6 +42,7 @@ Done:
 - Moved responsibility for valid "init inputs" to RoverState class.
 - ----- After 3 hours
 - Make commandsHandler only work with a list of Commands.
+- Restore old behaviour: If Rover.constructor gets less than 3 params, it should generate rover in default position
 
 Not doing:
 
