@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1760074496227" clover="3.2.0">
+  <project timestamp="1760074496227" name="All files">
+    <metrics statements="32" coveredstatements="32" conditionals="25" coveredconditionals="25" methods="6" coveredmethods="6" elements="63" coveredelements="63" complexity="0" loc="32" ncloc="32" packages="1" files="2" classes="2"/>
+    <file name="Rover.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/Rover.ts">
+      <metrics statements="28" coveredstatements="28" conditionals="25" coveredconditionals="25" methods="5" coveredmethods="5"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="6" count="21" type="stmt"/>
+      <line num="7" count="21" type="cond" truecount="1" falsecount="0"/>
+      <line num="8" count="20" type="stmt"/>
+      <line num="9" count="20" type="stmt"/>
+      <line num="10" count="20" type="stmt"/>
+      <line num="15" count="19" type="stmt"/>
+      <line num="16" count="34" type="stmt"/>
+      <line num="17" count="34" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="10" type="cond" truecount="2" falsecount="0"/>
+      <line num="19" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="20" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="21" count="2" type="cond" truecount="1" falsecount="0"/>
+      <line num="22" count="24" type="cond" truecount="2" falsecount="0"/>
+      <line num="23" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="24" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="25" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="26" count="2" type="cond" truecount="1" falsecount="0"/>
+      <line num="27" count="16" type="cond" truecount="1" falsecount="0"/>
+      <line num="28" count="16" type="cond" truecount="1" falsecount="0"/>
+      <line num="29" count="16" type="cond" truecount="1" falsecount="0"/>
+      <line num="30" count="16" type="cond" truecount="1" falsecount="0"/>
+      <line num="31" count="16" type="cond" truecount="1" falsecount="0"/>
+      <line num="38" count="4" type="stmt"/>
+      <line num="42" count="20" type="stmt"/>
+      <line num="46" count="20" type="stmt"/>
+      <line num="49" count="21" type="stmt"/>
+    </file>
+    <file name="RoverState.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/RoverState.ts">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="21" type="stmt"/>
+      <line num="3" count="21" type="stmt"/>
+      <line num="4" count="21" type="stmt"/>
+    </file>
+  </project>
+</coverage>

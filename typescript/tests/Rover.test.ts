@@ -25,4 +25,38 @@ describe("MarsRoverShould", () => {
         expect(rover.pos()).toBe(expectedOutput);
       }
     );
+
+    test.each([
+        ["1 2 N", "L", "1 2 W"],
+        ["1 2 N", "LMLMLMLMM", "1 2 W"],
+        ["3 3 E", "MMRMMRMRRM", "4 3 E"]
+    ])(
+        "When processing one command explicitly, start at '%s', with instructions '%s' => '%s'",
+        (startingPosition, instructions, expectedOutput) => {
+            const rover = new Rover(startingPosition);
+            rover.G(instructions);
+            expect(rover.pos()).toBe(expectedOutput);
+        }
+    );
+
+    test.each([
+        ["1 2 N", ""],
+    ])(
+        "When processing one command explicitly, if no command is given: throw error",
+        (startingPosition, instructions) => {
+            const expectedOutput = new Error('Cannot read properties of undefined (reading \'length\')')
+            const rover = new Rover(startingPosition);
+            expect(() => rover.G(instructions)).toThrow(expectedOutput);
+        }
+    );
+
+    test('When initialized with no parameters, position is "0 0 N"', () => {
+        const rover = new Rover();
+        expect(rover.pos()).toBe("0 0 N");
+    })
+
+    test('When initialized with parameters, position is set to parameters it initialize with', () => {
+        const rover = new Rover("4 5 S");
+        expect(rover.pos()).toBe("4 5 S");
+    })
   });

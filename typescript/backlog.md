@@ -7,7 +7,6 @@ Readablilty:
 - Rename params in rover.constructor
 - Use Enum for coordinates
 - handle uncovered lines in tst coverage
-- add test for rover.G
 
 Responsibility:
 - Move setting and getting rover position to RoverState
@@ -19,3 +18,5 @@ Doing:
 
 Done:
 - add coverage script
+- add test for rover.G
+- add test for rover constructor
