@@ -49,6 +49,7 @@ Done:
 - Add support for different RoverStateInterfaces
 - Introduce VehicleState interface, so commandHandler can work with different vehicles.
 - Map string char to Command via Map.
+- Map string char to Direction via Map.
 
 Not doing:
 
