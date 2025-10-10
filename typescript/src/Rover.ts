@@ -3,12 +3,12 @@ import { RoverState } from "./RoverState";
 export class Rover {
     private rs: RoverState = new RoverState();
   
-    constructor(p: string = "") {
-      const s = p.split(" ");
-      if (s.length >= 3) {
-        this.rs.eastWest = parseInt(s[0], 10);
-        this.rs.northSouth = parseInt(s[1], 10);
-        this.rs.frontFacing = s[2][0];
+    constructor(initCommand: string = "") {
+      const initParams = initCommand.split(" ");
+      if (initParams.length >= 3) {
+        this.rs.eastWest = parseInt(initParams[0], 10);
+        this.rs.northSouth = parseInt(initParams[1], 10);
+        this.rs.frontFacing = initParams[2][0];
       }
     }
   
