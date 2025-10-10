@@ -35,12 +35,13 @@ export class Rover {
       }
     }
 
-    public G(z: string): void {
-      this.go(z[0]);
+    public G(commands: string): void {
+      this.go(commands[0]);
     }
   
     public get XYD(): string {
-      return `${this.roverState.eastWest} ${this.roverState.northSouth} ${this.roverState.frontFacing}`;
+        return this.roverState.printCurrentPosition()
+      // return `${this.roverState.eastWest} ${this.roverState.northSouth} ${this.roverState.frontFacing}`;
     }
 
     public pos(): string {

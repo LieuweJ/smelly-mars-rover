@@ -60,4 +60,8 @@ export class RoverState {
     turnToNorth() {
         this.frontFacing = NORTH;
     }
+
+    printCurrentPosition(): string {
+        return `${this.eastWest} ${this.northSouth} ${this.frontFacing}`;
+    }
 } 
