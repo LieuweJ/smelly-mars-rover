@@ -56,6 +56,8 @@ Done:
 - Refactored Rover class to use Dependency Injection for RoverState and CommandHandler.
 - Made all methods in VehicleStateFactory none-static for easier mocking.
 - cleanup.
+- Renamed consts RoverState to VehicleState in StrategyHandler + Strategies"
+- Renamed enum COMMAND to Command
 - ----- State after 4 hours 15 minutes.
 
 Not doing:
