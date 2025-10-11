@@ -6,8 +6,12 @@ const stringToCommandMap: { [key: string]: COMMAND } = {
     [COMMAND_MOVE]: COMMAND.M,
 };
 
-export class CommandsFactory {
-    static fromString(input: string): COMMAND[] {
+export type ICommandsFactory = {
+    fromString: (input: string) => COMMAND[];
+}
+
+export class CommandsFactory implements ICommandsFactory {
+    fromString(input: string): COMMAND[] {
         const commands: COMMAND[] = []
 
         const chars = input.split('');

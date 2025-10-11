@@ -1,22 +1,25 @@
 import {VehicleState} from "./RoverState";
-import {CommandLeft} from "./commandHandling/strategies/commandLeft";
-import {CommandRight} from "./commandHandling/strategies/commandRight";
-import {CommandMove} from "./commandHandling/strategies/commandMove";
-import {CommandsHandler} from "./commandHandling/commandsHandler";
-import {CommandsFactory} from "./Factories/CommandsFactory";
-import {VehicleStateFactory} from "./Factories/VehicleStateFactory";
+import {ICommandsHandler} from "./commandHandling/commandsHandler";
+import {ICommandsFactory} from "./Factories/CommandsFactory";
 
 export class Rover {
     private readonly roverState: VehicleState;
-    private commandsHandler = new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandMove()])
+    private readonly commandsHandler: ICommandsHandler;
+    private readonly commandsFactory: ICommandsFactory;
 
-    constructor(initPosition: string = "") {
-        this.roverState = VehicleStateFactory.createRover(initPosition);
+    constructor(
+        commandsHandler: ICommandsHandler,
+        commandsFactory: ICommandsFactory,
+        initPosition: VehicleState,
+    ) {
+        this.roverState = initPosition;
+        this.commandsHandler = commandsHandler;
+        this.commandsFactory = commandsFactory;
     }
 
     public go(commands: string): void {
         this.commandsHandler.handle(
-            CommandsFactory.fromString(commands),
+            this.commandsFactory.fromString(commands),
             [this.roverState]
         );
     }

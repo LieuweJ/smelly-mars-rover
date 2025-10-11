@@ -7,8 +7,12 @@ const stringToDirectionMap: Record<string, Direction> = {
     [SOUTH]: Direction.S,
 }
 
-export class VehicleStateFactory {
-    static createRover(initPosition: string = ""): RoverState {
+export type IVehicleStateFactory = {
+    createRover: (initPosition?: string) => RoverState
+}
+
+export class VehicleStateFactory implements IVehicleStateFactory {
+    createRover(initPosition: string = ""): RoverState {
         const startingPositions = initPosition.split(" ");
 
         if (startingPositions.length < 3) {
@@ -22,7 +26,7 @@ export class VehicleStateFactory {
         )
     }
 
-    private static mapToCoordinate(possibleCoordinate: string): number | undefined {
+    private mapToCoordinate(possibleCoordinate: string): number | undefined {
         const coordinate = parseInt(possibleCoordinate, 10);
 
         if (this.isValidCoordinate(coordinate)) {
@@ -30,11 +34,11 @@ export class VehicleStateFactory {
         }
     }
 
-    private static mapToDirection(possibleDirection: string): Direction | undefined {
+    private mapToDirection(possibleDirection: string): Direction | undefined {
         return stringToDirectionMap[possibleDirection];
     }
 
-    private static isValidCoordinate(position: number): boolean {
+    private isValidCoordinate(position: number): boolean {
         return !isNaN(position);
     }
 }

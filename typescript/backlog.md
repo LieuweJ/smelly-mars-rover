@@ -53,6 +53,9 @@ Done:
 - Changed const DIRECTIONS to enum Directions
 - Cleanup.
 - ----- State after 4 hours
+- Refactored Rover class to use Dependency Injection for RoverState and CommandHandler.
+- Made all methods in VehicleStateFactory none-static for easier mocking.
+- ----- State after 4 hours 15 minutes.
 
 Not doing:
 

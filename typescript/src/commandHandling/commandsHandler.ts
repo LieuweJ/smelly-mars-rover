@@ -15,7 +15,11 @@ export type CommandStrategy = {
     execute: (roverState: VehicleState) => void;
 }
 
-export class CommandsHandler {
+export type ICommandsHandler = {
+    handle: (commands: COMMAND[], roverStates: VehicleState[]) => void
+}
+
+export class CommandsHandler implements ICommandsHandler {
     private readonly commandStrategies: CommandStrategy[];
 
     constructor(commandStrategies: CommandStrategy[]) {
