@@ -1,10 +1,9 @@
-import {VehicleState} from "./RoverState";
 import {CommandsHandler, ICommandsHandler} from "./commandHandling/commandsHandler";
 import {CommandsFactory, ICommandsFactory} from "./Factories/CommandsFactory";
 import {CommandLeft} from "./commandHandling/strategies/commandLeft";
 import {CommandRight} from "./commandHandling/strategies/commandRight";
 import {CommandMove} from "./commandHandling/strategies/commandMove";
-import {IVehicleStateFactory, VehicleStateFactory} from "./Factories/VehicleStateFactory";
+import {IVehicleStateFactory, VehicleState, VehicleStateFactory} from "./Factories/VehicleStateFactory";
 
 export class Rover {
     private readonly roverState: VehicleState

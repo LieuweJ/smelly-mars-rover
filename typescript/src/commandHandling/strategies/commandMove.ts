@@ -1,8 +1,9 @@
-import {EAST, NORTH, VehicleState, SOUTH, WEST} from "../../RoverState";
-import {COMMAND_MOVE, CommandStrategy} from "../commandsHandler";
+import {CommandStrategy} from "../commandsHandler";
+import {EAST, NORTH, SOUTH, VehicleState, WEST} from "../../Factories/VehicleStateFactory";
+import {Command, COMMAND_MOVE} from "../../Factories/CommandsFactory";
 
 export class CommandMove implements CommandStrategy {
-    shouldExecute(command: string): boolean {
+    shouldExecute(command: Command): boolean {
         return command === COMMAND_MOVE
     }
 

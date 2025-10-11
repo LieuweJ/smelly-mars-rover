@@ -1,17 +1,8 @@
-import {VehicleState} from "../RoverState";
-
-export enum Command {
-    R = "R",
-    L = "L",
-    M = "M"
-}
-
-export const COMMAND_TURN_RIGHT = Command.R;
-export const COMMAND_MOVE = Command.M;
-export const COMMAND_TURN_LEFT = Command.L;
+import {VehicleState} from "../Factories/VehicleStateFactory";
+import {Command} from "../Factories/CommandsFactory";
 
 export type CommandStrategy = {
-    shouldExecute: (command: string) => boolean;
+    shouldExecute: (command: Command) => boolean;
     execute: (vehicleState: VehicleState) => void;
 }
 
@@ -33,14 +24,14 @@ export class CommandsHandler implements ICommandsHandler {
     private handleCommand(command: Command, vehicleStates: VehicleState[]) {
         for (const strategy of this.commandStrategies) {
             if (strategy.shouldExecute(command)) {
-                this.instructVehicle(strategy, vehicleStates);
+                this.instructVehicles(strategy, vehicleStates);
 
                 break;
             }
         }
     }
 
-    private instructVehicle(strategy: CommandStrategy, vehicleStates: VehicleState[]) {
+    private instructVehicles(strategy: CommandStrategy, vehicleStates: VehicleState[]) {
         for (const vehicleState of vehicleStates) {
             strategy.execute(vehicleState)
         }

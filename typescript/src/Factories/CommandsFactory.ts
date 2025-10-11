@@ -1,4 +1,12 @@
-import {Command, COMMAND_MOVE, COMMAND_TURN_LEFT, COMMAND_TURN_RIGHT} from "../commandHandling/commandsHandler";
+export enum Command {
+    R = "R",
+    L = "L",
+    M = "M"
+}
+
+export const COMMAND_TURN_RIGHT = Command.R;
+export const COMMAND_MOVE = Command.M;
+export const COMMAND_TURN_LEFT = Command.L;
 
 const stringToCommandMap: { [key: string]: Command } = {
     [COMMAND_TURN_LEFT]: Command.L,
@@ -14,9 +22,8 @@ export class CommandsFactory implements ICommandsFactory {
     fromString(input: string): Command[] {
         const commands: Command[] = []
 
-        const chars = input.split('');
-        for (let i = 0; i < chars.length; i++) {
-            const command = stringToCommandMap[chars[i]];
+        for (let i = 0; i < input.length; i++) {
+            const command = stringToCommandMap[input[i]];
 
             if (command) {
                 commands.push(command);

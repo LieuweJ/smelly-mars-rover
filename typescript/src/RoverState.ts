@@ -1,36 +1,4 @@
-export enum Direction {
-    N = 'N',
-    E = 'E',
-    S = 'S',
-    W = 'W',
-}
-
-export const NORTH = Direction.N;
-export const WEST = Direction.W;
-export const SOUTH = Direction.S;
-export const EAST = Direction.E;
-
-export interface VehicleState {
-    isFacing(direction: Direction): boolean;
-
-    moveOneNorth(): void;
-
-    moveOneWest(): void;
-
-    moveOneSouth(): void;
-
-    moveOneEast(): void;
-
-    turnToEast(): void;
-
-    turnToSouth(): void;
-
-    turnToWest(): void;
-
-    turnToNorth(): void;
-
-    printCurrentPosition(): string;
-}
+import {Direction, EAST, NORTH, SOUTH, VehicleState, WEST} from "./Factories/VehicleStateFactory";
 
 export class RoverState implements VehicleState {
     eastWest: number;

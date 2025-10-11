@@ -62,7 +62,8 @@ Done:
 - ----- State after 4 hours 15 minutes.
 - make class Rover work with and without DI.
 - cleanup.
-- ----- State after 4 hours 25 minutes.
+- cleanup, move global params to Factory files.
+- ----- State after 4 hours 30 minutes.
 
 Not doing:
 
