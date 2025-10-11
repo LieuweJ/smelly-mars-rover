@@ -1,18 +1,18 @@
-import {COMMAND, COMMAND_MOVE, COMMAND_TURN_LEFT, COMMAND_TURN_RIGHT} from "../commandHandling/commandsHandler";
+import {Command, COMMAND_MOVE, COMMAND_TURN_LEFT, COMMAND_TURN_RIGHT} from "../commandHandling/commandsHandler";
 
-const stringToCommandMap: { [key: string]: COMMAND } = {
-    [COMMAND_TURN_LEFT]: COMMAND.L,
-    [COMMAND_TURN_RIGHT]: COMMAND.R,
-    [COMMAND_MOVE]: COMMAND.M,
+const stringToCommandMap: { [key: string]: Command } = {
+    [COMMAND_TURN_LEFT]: Command.L,
+    [COMMAND_TURN_RIGHT]: Command.R,
+    [COMMAND_MOVE]: Command.M,
 };
 
 export type ICommandsFactory = {
-    fromString: (input: string) => COMMAND[];
+    fromString: (input: string) => Command[];
 }
 
 export class CommandsFactory implements ICommandsFactory {
-    fromString(input: string): COMMAND[] {
-        const commands: COMMAND[] = []
+    fromString(input: string): Command[] {
+        const commands: Command[] = []
 
         const chars = input.split('');
         for (let i = 0; i < chars.length; i++) {

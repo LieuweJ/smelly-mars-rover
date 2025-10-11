@@ -1,14 +1,14 @@
 import {VehicleState} from "../RoverState";
 
-export enum COMMAND {
+export enum Command {
     R = "R",
     L = "L",
     M = "M"
 }
 
-export const COMMAND_TURN_RIGHT = COMMAND.R;
-export const COMMAND_MOVE = COMMAND.M;
-export const COMMAND_TURN_LEFT = COMMAND.L;
+export const COMMAND_TURN_RIGHT = Command.R;
+export const COMMAND_MOVE = Command.M;
+export const COMMAND_TURN_LEFT = Command.L;
 
 export type CommandStrategy = {
     shouldExecute: (command: string) => boolean;
@@ -16,7 +16,7 @@ export type CommandStrategy = {
 }
 
 export type ICommandsHandler = {
-    handle: (commands: COMMAND[], roverStates: VehicleState[]) => void
+    handle: (commands: Command[], roverStates: VehicleState[]) => void
 }
 
 export class CommandsHandler implements ICommandsHandler {
@@ -24,13 +24,13 @@ export class CommandsHandler implements ICommandsHandler {
     constructor(private readonly commandStrategies: CommandStrategy[]) {
     }
 
-    handle(commands: COMMAND[], vehicleStates: VehicleState[]) {
+    handle(commands: Command[], vehicleStates: VehicleState[]) {
         for (const command of commands) {
             this.handleCommand(command, vehicleStates);
         }
     }
 
-    private handleCommand(command: COMMAND, vehicleStates: VehicleState[]) {
+    private handleCommand(command: Command, vehicleStates: VehicleState[]) {
         for (const strategy of this.commandStrategies) {
             if (strategy.shouldExecute(command)) {
                 this.instructRovers(strategy, vehicleStates);
