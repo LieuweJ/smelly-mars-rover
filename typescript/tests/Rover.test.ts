@@ -9,7 +9,7 @@ import {CommandMove} from "../src/commandHandling/strategies/commandMove";
 describe("MarsRoverShould", () => {
     const commandsHandler = new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandMove()])
     const commandsFactory = new CommandsFactory();
-    const roverStateFactory = new VehicleStateFactory();
+    const vehicleStateFactory = new VehicleStateFactory();
 
     test.each([
         ["1 2 N", "", "1 2 N"],
@@ -43,7 +43,7 @@ describe("MarsRoverShould", () => {
     ])(
         "When processing one command explicitly, start at '%s', with instructions '%s' => '%s'",
         (startingPosition, instructions, expectedOutput) => {
-            const rover = new Rover(startingPosition, roverStateFactory, commandsFactory, commandsHandler);
+            const rover = new Rover(startingPosition, vehicleStateFactory, commandsFactory, commandsHandler);
             rover.G(instructions);
             expect(rover.pos()).toBe(expectedOutput);
             expect(rover.XYD).toBe(expectedOutput);
@@ -56,13 +56,13 @@ describe("MarsRoverShould", () => {
         "When processing one command explicitly, if no command is given: throw error",
         (startingPosition, instructions) => {
             const expectedOutput = new Error('Cannot read properties of undefined (reading \'length\')')
-            const rover = new Rover();
+            const rover = new Rover(startingPosition);
             expect(() => rover.G(instructions)).toThrow(expectedOutput);
         }
     );
 
     test('When initialized with no parameters, position is "0 0 N"', () => {
-        const rover = new Rover('', roverStateFactory, commandsFactory, commandsHandler);
+        const rover = new Rover('', vehicleStateFactory, commandsFactory, commandsHandler);
         expect(rover.pos()).toBe("0 0 N");
     })
 
@@ -95,5 +95,11 @@ describe("MarsRoverShould", () => {
         const result = new Rover();
 
         expect(result.pos()).toBe('0 0 N')
+    })
+
+    test('VehicleState Factory:createRover can handle empty string', () => {
+        const roverState = vehicleStateFactory.createRover();
+
+        expect(roverState.printCurrentPosition()).toBe('0 0 N')
     })
 });

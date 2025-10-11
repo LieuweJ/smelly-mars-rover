@@ -43,8 +43,8 @@ Done:
 - ----- State after 3 hours
 - Make commandsHandler only work with a list of Commands.
 - Restore old behaviour: If Rover.constructor gets less than 3 params, it should generate rover in default position
-- Move initialPosition of RoverState mapping to Factory
-- Move 'create initialPosition' to Factory class.
+- Move "translate commands (sting) to Command[]" to CommandsFactory
+- Move 'create initial RoverState' to RoverStateFactory class.
 - Add support for multiple rovers handling the same command list.
 - Add support for different RoverStateInterfaces
 - Introduce VehicleState interface, so commandHandler can work with different vehicles.
@@ -61,6 +61,7 @@ Done:
 - cleanup.
 - ----- State after 4 hours 15 minutes.
 - make class Rover work with and without DI.
+- cleanup.
 - ----- State after 4 hours 25 minutes.
 
 Not doing:
