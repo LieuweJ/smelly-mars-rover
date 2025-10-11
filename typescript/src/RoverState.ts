@@ -1,14 +1,10 @@
 import {Direction, EAST, NORTH, SOUTH, VehicleState, WEST} from "./Factories/RoverStateFactory";
 
 export class RoverState implements VehicleState {
-    eastWest: number;
-    northSouth: number;
-    frontFacing: Direction;
-
-    constructor(eastWest: number = 0, northSouth: number = 0, frontFacing: Direction = NORTH) {
-        this.eastWest = eastWest;
-        this.northSouth = northSouth;
-        this.frontFacing = frontFacing;
+    constructor(
+        private eastWest: number = 0,
+        private northSouth: number = 0,
+        private frontFacing: Direction = NORTH) {
     }
 
     isFacing(direction: Direction) {
