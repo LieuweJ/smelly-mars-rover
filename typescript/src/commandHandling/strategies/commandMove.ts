@@ -6,18 +6,18 @@ export class CommandMove implements CommandStrategy {
         return command === COMMAND_MOVE
     }
 
-    execute(roverState: VehicleState) {
-        if (roverState.isFacing(EAST)) {
-            roverState.moveOneEast();
+    execute(vehicleState: VehicleState) {
+        if (vehicleState.isFacing(EAST)) {
+            vehicleState.moveOneEast();
         }
-        if (roverState.isFacing(SOUTH)) {
-            roverState.moveOneSouth();
+        if (vehicleState.isFacing(SOUTH)) {
+            vehicleState.moveOneSouth();
         }
-        if (roverState.isFacing(WEST)) {
-            roverState.moveOneWest();
+        if (vehicleState.isFacing(WEST)) {
+            vehicleState.moveOneWest();
         }
-        if (roverState.isFacing(NORTH)) {
-            roverState.moveOneNorth();
+        if (vehicleState.isFacing(NORTH)) {
+            vehicleState.moveOneNorth();
         }
     }
 }

@@ -24,25 +24,25 @@ export class CommandsHandler implements ICommandsHandler {
     constructor(private readonly commandStrategies: CommandStrategy[]) {
     }
 
-    handle(commands: COMMAND[], roverStates: VehicleState[]) {
+    handle(commands: COMMAND[], vehicleStates: VehicleState[]) {
         for (const command of commands) {
-            this.handleCommand(command, roverStates);
+            this.handleCommand(command, vehicleStates);
         }
     }
 
-    private handleCommand(command: COMMAND, roverStates: VehicleState[]) {
+    private handleCommand(command: COMMAND, vehicleStates: VehicleState[]) {
         for (const strategy of this.commandStrategies) {
             if (strategy.shouldExecute(command)) {
-                this.instructRovers(strategy, roverStates);
+                this.instructRovers(strategy, vehicleStates);
 
                 break;
             }
         }
     }
 
-    private instructRovers(strategy: CommandStrategy, roverStates: VehicleState[]) {
-        for (const roverState of roverStates) {
-            strategy.execute(roverState)
+    private instructRovers(strategy: CommandStrategy, vehicleStates: VehicleState[]) {
+        for (const vehicleState of vehicleStates) {
+            strategy.execute(vehicleState)
         }
     }
 }
