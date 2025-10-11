@@ -3,24 +3,30 @@ import {CommandsFactory, ICommandsFactory} from "./Factories/CommandsFactory";
 import {CommandLeft} from "./commandHandling/strategies/commandLeft";
 import {CommandRight} from "./commandHandling/strategies/commandRight";
 import {CommandMove} from "./commandHandling/strategies/commandMove";
-import {IVehicleStateFactory, VehicleState, VehicleStateFactory} from "./Factories/VehicleStateFactory";
+import {VehicleStateFactory, VehicleState, RoverStateFactory} from "./Factories/RoverStateFactory";
 
-export class Rover {
-    private readonly roverState: VehicleState
+interface VehicleController {
+    go(commands: string): void;
+
+    pos(): string;
+}
+
+export class Rover implements VehicleController {
+    private readonly vehicleState: VehicleState
 
     constructor(
         initState: string = '',
-        initStateFactory: IVehicleStateFactory = new VehicleStateFactory(),
+        initStateFactory: VehicleStateFactory = new RoverStateFactory(),
         private readonly commandsFactory: ICommandsFactory = new CommandsFactory(),
         private readonly commandsHandler: ICommandsHandler = new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandMove()]),
     ) {
-        this.roverState = initStateFactory.createRover(initState);
+        this.vehicleState = initStateFactory.create(initState);
     }
 
     public go(commands: string): void {
         this.commandsHandler.handle(
             this.commandsFactory.fromString(commands),
-            [this.roverState]
+            [this.vehicleState]
         );
     }
 
@@ -36,12 +42,12 @@ export class Rover {
     public get XYD(): string {
         // techDebt: logging is part of techDebt analysis point 1 (See: ticketNumber 123)
         console.log('XYD called');
-        return this.roverState.printCurrentPosition()
+        return this.vehicleState.printCurrentPosition()
     }
 
     public pos(): string {
         // techDebt: logging is part of techDebt analysis point 1 (ticketNumber 123)
         console.log('Pos called');
-        return this.roverState.printCurrentPosition()
+        return this.vehicleState.printCurrentPosition()
     }
 }

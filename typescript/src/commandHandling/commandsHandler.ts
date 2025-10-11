@@ -1,4 +1,4 @@
-import {VehicleState} from "../Factories/VehicleStateFactory";
+import {VehicleState} from "../Factories/RoverStateFactory";
 import {Command} from "../Factories/CommandsFactory";
 
 export type CommandStrategy = {

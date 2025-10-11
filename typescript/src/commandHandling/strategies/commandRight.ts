@@ -1,5 +1,5 @@
 import {CommandStrategy} from "../commandsHandler";
-import {EAST, NORTH, SOUTH, VehicleState, WEST} from "../../Factories/VehicleStateFactory";
+import {EAST, NORTH, SOUTH, VehicleState, WEST} from "../../Factories/RoverStateFactory";
 import {Command, COMMAND_TURN_RIGHT} from "../../Factories/CommandsFactory";
 
 export class CommandRight implements CommandStrategy {

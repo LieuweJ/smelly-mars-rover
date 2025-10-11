@@ -1,9 +1,9 @@
-import {Direction, EAST, NORTH, SOUTH, VehicleState, WEST} from "./Factories/VehicleStateFactory";
+import {Direction, EAST, NORTH, SOUTH, VehicleState, WEST} from "./Factories/RoverStateFactory";
 
 export class RoverState implements VehicleState {
     eastWest: number;
     northSouth: number;
-    frontFacing: string;
+    frontFacing: Direction;
 
     constructor(eastWest: number = 0, northSouth: number = 0, frontFacing: Direction = NORTH) {
         this.eastWest = eastWest;

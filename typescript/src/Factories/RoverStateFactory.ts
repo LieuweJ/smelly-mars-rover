@@ -41,12 +41,12 @@ const stringToDirectionMap: Record<string, Direction> = {
     [SOUTH]: Direction.S,
 }
 
-export type IVehicleStateFactory = {
-    createRover: (initPosition?: string) => RoverState
+export type VehicleStateFactory = {
+    create: (initPosition?: string) => VehicleState;
 }
 
-export class VehicleStateFactory implements IVehicleStateFactory {
-    createRover(initPosition: string = ""): RoverState {
+export class RoverStateFactory implements VehicleStateFactory {
+    create(initPosition: string = ""): RoverState {
         const startingPositions = initPosition.split(" ");
 
         if (startingPositions.length < 3) {

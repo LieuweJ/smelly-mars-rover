@@ -1,6 +1,6 @@
 import {Rover} from '../src/Rover';
 import {CommandsFactory} from "../src/Factories/CommandsFactory";
-import {VehicleStateFactory} from "../src/Factories/VehicleStateFactory";
+import {RoverStateFactory} from "../src/Factories/RoverStateFactory";
 import {CommandsHandler} from "../src/commandHandling/commandsHandler";
 import {CommandLeft} from "../src/commandHandling/strategies/commandLeft";
 import {CommandRight} from "../src/commandHandling/strategies/commandRight";
@@ -9,7 +9,7 @@ import {CommandMove} from "../src/commandHandling/strategies/commandMove";
 describe("MarsRoverShould", () => {
     const commandsHandler = new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandMove()])
     const commandsFactory = new CommandsFactory();
-    const vehicleStateFactory = new VehicleStateFactory();
+    const vehicleStateFactory = new RoverStateFactory();
 
     test.each([
         ["1 2 N", "", "1 2 N"],
@@ -98,7 +98,7 @@ describe("MarsRoverShould", () => {
     })
 
     test('VehicleState Factory:createRover can handle empty string', () => {
-        const roverState = vehicleStateFactory.createRover();
+        const roverState = vehicleStateFactory.create();
 
         expect(roverState.printCurrentPosition()).toBe('0 0 N')
     })
