@@ -12,11 +12,11 @@ export const COMMAND_TURN_LEFT = Command.L;
 
 export type CommandStrategy = {
     shouldExecute: (command: string) => boolean;
-    execute: (roverState: VehicleState) => void;
+    execute: (vehicleState: VehicleState) => void;
 }
 
 export type ICommandsHandler = {
-    handle: (commands: Command[], roverStates: VehicleState[]) => void
+    handle: (commands: Command[], vehicleStates: VehicleState[]) => void
 }
 
 export class CommandsHandler implements ICommandsHandler {
@@ -33,14 +33,14 @@ export class CommandsHandler implements ICommandsHandler {
     private handleCommand(command: Command, vehicleStates: VehicleState[]) {
         for (const strategy of this.commandStrategies) {
             if (strategy.shouldExecute(command)) {
-                this.instructRovers(strategy, vehicleStates);
+                this.instructVehicle(strategy, vehicleStates);
 
                 break;
             }
         }
     }
 
-    private instructRovers(strategy: CommandStrategy, vehicleStates: VehicleState[]) {
+    private instructVehicle(strategy: CommandStrategy, vehicleStates: VehicleState[]) {
         for (const vehicleState of vehicleStates) {
             strategy.execute(vehicleState)
         }

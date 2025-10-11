@@ -58,6 +58,7 @@ Done:
 - cleanup.
 - Renamed consts RoverState to VehicleState in StrategyHandler + Strategies"
 - Renamed enum COMMAND to Command
+- cleanup.
 - ----- State after 4 hours 15 minutes.
 
 Not doing:
