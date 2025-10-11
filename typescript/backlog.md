@@ -55,6 +55,7 @@ Done:
 - ----- State after 4 hours
 - Refactored Rover class to use Dependency Injection for RoverState and CommandHandler.
 - Made all methods in VehicleStateFactory none-static for easier mocking.
+- cleanup.
 - ----- State after 4 hours 15 minutes.
 
 Not doing:

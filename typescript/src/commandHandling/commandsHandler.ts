@@ -20,10 +20,8 @@ export type ICommandsHandler = {
 }
 
 export class CommandsHandler implements ICommandsHandler {
-    private readonly commandStrategies: CommandStrategy[];
 
-    constructor(commandStrategies: CommandStrategy[]) {
-        this.commandStrategies = commandStrategies;
+    constructor(private readonly commandStrategies: CommandStrategy[]) {
     }
 
     handle(commands: COMMAND[], roverStates: VehicleState[]) {

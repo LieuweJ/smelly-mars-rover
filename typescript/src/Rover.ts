@@ -3,18 +3,12 @@ import {ICommandsHandler} from "./commandHandling/commandsHandler";
 import {ICommandsFactory} from "./Factories/CommandsFactory";
 
 export class Rover {
-    private readonly roverState: VehicleState;
-    private readonly commandsHandler: ICommandsHandler;
-    private readonly commandsFactory: ICommandsFactory;
-
     constructor(
-        commandsHandler: ICommandsHandler,
-        commandsFactory: ICommandsFactory,
-        initPosition: VehicleState,
+        private readonly commandsHandler: ICommandsHandler,
+        private readonly commandsFactory: ICommandsFactory,
+        private readonly roverState: VehicleState,
     ) {
-        this.roverState = initPosition;
-        this.commandsHandler = commandsHandler;
-        this.commandsFactory = commandsFactory;
+
     }
 
     public go(commands: string): void {
