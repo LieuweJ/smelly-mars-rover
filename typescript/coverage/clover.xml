@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1760160072683" clover="3.2.0">
-  <project timestamp="1760160072683" name="All files">
-    <metrics statements="118" coveredstatements="118" conditionals="25" coveredconditionals="25" methods="33" coveredmethods="33" elements="176" coveredelements="176" complexity="0" loc="118" ncloc="118" packages="4" files="8" classes="8"/>
+<coverage generated="1760178638352" clover="3.2.0">
+  <project timestamp="1760178638352" name="All files">
+    <metrics statements="124" coveredstatements="124" conditionals="29" coveredconditionals="29" methods="33" coveredmethods="33" elements="186" coveredelements="186" complexity="0" loc="124" ncloc="124" packages="4" files="8" classes="8"/>
     <package name="src">
-      <metrics statements="35" coveredstatements="35" conditionals="6" coveredconditionals="6" methods="17" coveredmethods="17"/>
+      <metrics statements="41" coveredstatements="41" conditionals="10" coveredconditionals="10" methods="17" coveredmethods="17"/>
       <file name="Rover.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/Rover.ts">
-        <metrics statements="12" coveredstatements="12" conditionals="1" coveredconditionals="1" methods="5" coveredmethods="5"/>
+        <metrics statements="18" coveredstatements="18" conditionals="5" coveredconditionals="5" methods="5" coveredmethods="5"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="7" count="24" type="stmt"/>
-        <line num="8" count="24" type="stmt"/>
-        <line num="9" count="24" type="stmt"/>
-        <line num="15" count="19" type="stmt"/>
-        <line num="23" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="27" count="3" type="stmt"/>
-        <line num="32" count="3" type="stmt"/>
-        <line num="33" count="3" type="stmt"/>
-        <line num="38" count="23" type="stmt"/>
-        <line num="39" count="23" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="15" count="24" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="24" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="24" type="stmt"/>
+        <line num="22" count="19" type="stmt"/>
+        <line num="30" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="39" count="3" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="45" count="23" type="stmt"/>
+        <line num="46" count="23" type="stmt"/>
       </file>
       <file name="RoverState.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/RoverState.ts">
         <metrics statements="23" coveredstatements="23" conditionals="5" coveredconditionals="5" methods="12" coveredmethods="12"/>
@@ -68,13 +74,13 @@
         <line num="14" count="1" type="stmt"/>
         <line num="16" count="25" type="stmt"/>
         <line num="18" count="25" type="cond" truecount="1" falsecount="0"/>
-        <line num="19" count="3" type="stmt"/>
-        <line num="22" count="22" type="stmt"/>
-        <line num="30" count="44" type="stmt"/>
-        <line num="32" count="44" type="cond" truecount="1" falsecount="0"/>
-        <line num="33" count="44" type="stmt"/>
-        <line num="38" count="22" type="stmt"/>
-        <line num="42" count="44" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="22" count="21" type="stmt"/>
+        <line num="30" count="42" type="stmt"/>
+        <line num="32" count="42" type="cond" truecount="1" falsecount="0"/>
+        <line num="33" count="42" type="stmt"/>
+        <line num="38" count="21" type="stmt"/>
+        <line num="42" count="42" type="stmt"/>
       </file>
     </package>
     <package name="src.commandHandling">
@@ -89,7 +95,7 @@
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
+        <line num="24" count="21" type="stmt"/>
         <line num="28" count="19" type="stmt"/>
         <line num="29" count="34" type="stmt"/>
         <line num="34" count="34" type="stmt"/>

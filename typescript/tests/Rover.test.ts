@@ -30,7 +30,7 @@ describe("MarsRoverShould", () => {
     ])(
         "start at '%s', with instructions '%s' => '%s'",
         (startingPosition, instructions, expectedOutput) => {
-            const rover = new Rover(commandsHandler, commandsFactory, roverStateFactory.createRover(startingPosition));
+            const rover = new Rover(startingPosition);
             rover.go(instructions);
             expect(rover.pos()).toBe(expectedOutput);
         }
@@ -43,7 +43,7 @@ describe("MarsRoverShould", () => {
     ])(
         "When processing one command explicitly, start at '%s', with instructions '%s' => '%s'",
         (startingPosition, instructions, expectedOutput) => {
-            const rover = new Rover(commandsHandler, commandsFactory, roverStateFactory.createRover(startingPosition));
+            const rover = new Rover(startingPosition, roverStateFactory, commandsFactory, commandsHandler);
             rover.G(instructions);
             expect(rover.pos()).toBe(expectedOutput);
             expect(rover.XYD).toBe(expectedOutput);
@@ -56,44 +56,44 @@ describe("MarsRoverShould", () => {
         "When processing one command explicitly, if no command is given: throw error",
         (startingPosition, instructions) => {
             const expectedOutput = new Error('Cannot read properties of undefined (reading \'length\')')
-            const rover = new Rover(commandsHandler, commandsFactory, roverStateFactory.createRover(startingPosition));
+            const rover = new Rover();
             expect(() => rover.G(instructions)).toThrow(expectedOutput);
         }
     );
 
     test('When initialized with no parameters, position is "0 0 N"', () => {
-        const rover = new Rover(commandsHandler, commandsFactory, roverStateFactory.createRover());
+        const rover = new Rover('', roverStateFactory, commandsFactory, commandsHandler);
         expect(rover.pos()).toBe("0 0 N");
     })
 
     test('When initialized with parameters, position is set to parameters it initialize with', () => {
         const startingPosition = "4 5 S";
-        const rover = new Rover(commandsHandler, commandsFactory, roverStateFactory.createRover(startingPosition))
+        const rover = new Rover(startingPosition)
         expect(rover.pos()).toBe(startingPosition);
     })
 
     test('When an invalid command is given, the rover does not move', () => {
         const startingPosition = "1 2 N";
-        const rover = new Rover(commandsHandler, commandsFactory, roverStateFactory.createRover(startingPosition))
+        const rover = new Rover(startingPosition)
         rover.go("X");
         expect(rover.pos()).toBe("1 2 N");
     })
 
     test('When initing the Rover Class without full initial position, roverState is "0 0 N",', () => {
         const startingPosition = "1 2";
-        const rover = new Rover(commandsHandler, commandsFactory, roverStateFactory.createRover(startingPosition))
+        const rover = new Rover(startingPosition)
         expect(rover.pos()).toBe("0 0 N");
     })
 
     test('When initing the Rover Class with invalid initial position, roverState is the initial position,', () => {
         const startingPosition = "3 5 S";
-        const rover = new Rover(commandsHandler, commandsFactory, roverStateFactory.createRover(startingPosition))
+        const rover = new Rover(startingPosition)
         expect(rover.pos()).toBe(startingPosition);
     })
 
     test('Create RoverState without init position', () => {
-        const result = roverStateFactory.createRover();
+        const result = new Rover();
 
-        expect(result.printCurrentPosition()).toBe('0 0 N')
+        expect(result.pos()).toBe('0 0 N')
     })
 });

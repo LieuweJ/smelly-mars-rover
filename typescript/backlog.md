@@ -60,6 +60,8 @@ Done:
 - Renamed enum COMMAND to Command
 - cleanup.
 - ----- State after 4 hours 15 minutes.
+- make class Rover work with and without DI.
+- ----- State after 4 hours 25 minutes.
 
 Not doing:
 
