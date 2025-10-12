@@ -17,7 +17,7 @@ export interface VehicleState {
 
     getFacingDirection(): Direction;
 
-    move(direction: Direction, squares: number): void;
+    moveIn(direction: Direction, squares: number): void;
 
     turnTo(direction: Direction): void;
 

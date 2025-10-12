@@ -109,7 +109,7 @@ describe("MarsRoverShould", () => {
 
         // not existing direction for testing purposes
         // @ts-ignore
-        roverState.move("X" as unknown as Direction, 3);
+        roverState.moveIn("X" as unknown as Direction, 3);
         expect(roverState.printCurrentPosition()).toBe('1 2 N')
     })
 });

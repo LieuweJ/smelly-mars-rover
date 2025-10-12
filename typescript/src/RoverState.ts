@@ -19,7 +19,7 @@ export class RoverState implements VehicleState {
         private frontFacing: Direction = NORTH) {
     }
 
-    move(direction: Direction, squares: number) {
+    moveIn(direction: Direction, squares: number) {
         const axisMultiplier = this.axisMultipliers.get(direction);
         if (!axisMultiplier) {
             return;

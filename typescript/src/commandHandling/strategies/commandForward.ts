@@ -11,6 +11,6 @@ export class CommandForward implements CommandStrategy {
     }
 
     execute(vehicleState: VehicleState) {
-        vehicleState.move(vehicleState.getFacingDirection(), this.distance);
+        vehicleState.moveIn(vehicleState.getFacingDirection(), this.distance);
     }
 }
