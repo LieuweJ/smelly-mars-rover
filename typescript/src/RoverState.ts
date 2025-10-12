@@ -27,15 +27,7 @@ export class RoverState implements VehicleState {
 
         const movement = squares * axisMultiplier.multiplier;
 
-        this.updatePosition(axisMultiplier.axis, movement)
-    }
-
-    private updatePosition(axis: Axis, movement: number) {
-        if (axis === Axis.eastWest) {
-            this.eastWest += movement;
-        } else if (axis === Axis.northSouth) {
-            this.northSouth += movement;
-        }
+        this[axisMultiplier.axis] += movement;
     }
 
     isFacing(direction: Direction) {
