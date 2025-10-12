@@ -11,20 +11,20 @@ export class RoverState implements VehicleState {
         return this.frontFacing === direction;
     }
 
-    moveOneNorth() {
-        this.northSouth++;
+    moveNorthBy(squares: number) {
+        this.northSouth = this.northSouth + squares;
     }
 
-    moveOneWest() {
-        this.eastWest--;
+    moveWestBy(squares: number) {
+        this.eastWest = this.eastWest - squares;
     }
 
-    moveOneSouth() {
-        this.northSouth--;
+    moveSouthBy(squares: number) {
+        this.northSouth = this.northSouth - squares;
     }
 
-    moveOneEast() {
-        this.eastWest++;
+    moveEastBy(squares: number) {
+        this.eastWest = this.eastWest + squares;
     }
 
     turnToEast() {
