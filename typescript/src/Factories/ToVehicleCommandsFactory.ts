@@ -18,7 +18,7 @@ export type CommandsFactory<T> = {
     create: (input: T) => Command[];
 }
 
-export class ToRoverSupportedCommandsFactory implements CommandsFactory<string> {
+export class ToVehicleCommandsFactory implements CommandsFactory<string> {
     create(input: string): Command[] {
         const commands: Command[] = []
 

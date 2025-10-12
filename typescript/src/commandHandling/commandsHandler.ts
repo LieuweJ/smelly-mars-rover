@@ -1,5 +1,5 @@
-import {VehicleState} from "../Factories/ToRoverSupportedStateFactory";
-import {Command} from "../Factories/ToRoverSupportedCommandsFactory";
+import {VehicleState} from "../Factories/ToRoverStateFactory";
+import {Command} from "../Factories/ToVehicleCommandsFactory";
 
 export type CommandStrategy = {
     shouldExecute: (command: Command) => boolean;

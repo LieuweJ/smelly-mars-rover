@@ -1,6 +1,6 @@
 import {Rover} from '../src/Rover';
-import {ToRoverSupportedCommandsFactory} from "../src/Factories/ToRoverSupportedCommandsFactory";
-import {ToRoverSupportedStateFactory} from "../src/Factories/ToRoverSupportedStateFactory";
+import {ToVehicleCommandsFactory} from "../src/Factories/ToVehicleCommandsFactory";
+import {ToRoverStateFactory} from "../src/Factories/ToRoverStateFactory";
 import {CommandsHandler} from "../src/commandHandling/commandsHandler";
 import {CommandLeft} from "../src/commandHandling/strategies/commandLeft";
 import {CommandRight} from "../src/commandHandling/strategies/commandRight";
@@ -9,8 +9,8 @@ import {Direction} from "node:tty";
 
 describe("MarsRoverShould", () => {
     const commandsHandler = new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandForward()])
-    const commandsFactory = new ToRoverSupportedCommandsFactory();
-    const vehicleStateFactory = new ToRoverSupportedStateFactory();
+    const commandsFactory = new ToVehicleCommandsFactory();
+    const vehicleStateFactory = new ToRoverStateFactory();
 
     test.each([
         ["1 2 N", "", "1 2 N"],

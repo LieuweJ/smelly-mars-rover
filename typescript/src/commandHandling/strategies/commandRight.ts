@@ -1,6 +1,6 @@
 import {CommandStrategy} from "../commandsHandler";
-import {EAST, NORTH, SOUTH, VehicleState, WEST} from "../../Factories/ToRoverSupportedStateFactory";
-import {Command, COMMAND_TURN_RIGHT} from "../../Factories/ToRoverSupportedCommandsFactory";
+import {EAST, NORTH, SOUTH, VehicleState, WEST} from "../../Factories/ToRoverStateFactory";
+import {Command, COMMAND_TURN_RIGHT} from "../../Factories/ToVehicleCommandsFactory";
 
 export class CommandRight implements CommandStrategy {
     shouldExecute(command: Command): boolean {
@@ -28,7 +28,7 @@ export class CommandRight implements CommandStrategy {
 
         if (vehicleState.isFacing(NORTH)) {
             vehicleState.turnTo(EAST);
-            
+
             return;
         }
     }
