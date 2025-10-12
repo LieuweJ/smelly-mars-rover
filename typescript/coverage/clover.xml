@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1760250711058" clover="3.2.0">
-  <project timestamp="1760250711058" name="All files">
-    <metrics statements="124" coveredstatements="124" conditionals="29" coveredconditionals="29" methods="33" coveredmethods="33" elements="186" coveredelements="186" complexity="0" loc="124" ncloc="124" packages="4" files="8" classes="8"/>
+<coverage generated="1760273204994" clover="3.2.0">
+  <project timestamp="1760273204994" name="All files">
+    <metrics statements="124" coveredstatements="124" conditionals="30" coveredconditionals="30" methods="34" coveredmethods="34" elements="188" coveredelements="188" complexity="0" loc="124" ncloc="124" packages="4" files="8" classes="8"/>
     <package name="src">
       <metrics statements="33" coveredstatements="33" conditionals="8" coveredconditionals="8" methods="16" coveredmethods="16"/>
       <file name="Rover.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/Rover.ts">
@@ -106,7 +106,23 @@
       </file>
     </package>
     <package name="src.commandHandling.strategies">
-      <metrics statements="45" coveredstatements="45" conditionals="12" coveredconditionals="12" methods="6" coveredmethods="6"/>
+      <metrics statements="45" coveredstatements="45" conditionals="13" coveredconditionals="13" methods="7" coveredmethods="7"/>
+      <file name="commandForward.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/commandHandling/strategies/commandForward.ts">
+        <metrics statements="13" coveredstatements="13" conditionals="5" coveredconditionals="5" methods="3" coveredmethods="3"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="22" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="16" type="stmt"/>
+        <line num="14" count="16" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="18" count="16" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="22" count="16" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="26" count="16" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="3" type="stmt"/>
+      </file>
       <file name="commandLeft.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/commandHandling/strategies/commandLeft.ts">
         <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="2" count="1" type="stmt"/>
@@ -125,22 +141,6 @@
         <line num="27" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="28" count="2" type="stmt"/>
         <line num="30" count="2" type="stmt"/>
-      </file>
-      <file name="commandMoveOne.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/commandHandling/strategies/commandMoveOne.ts">
-        <metrics statements="13" coveredstatements="13" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="9" count="16" type="stmt"/>
-        <line num="13" count="16" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="6" type="stmt"/>
-        <line num="17" count="16" type="cond" truecount="1" falsecount="0"/>
-        <line num="18" count="4" type="stmt"/>
-        <line num="21" count="16" type="cond" truecount="1" falsecount="0"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="25" count="16" type="cond" truecount="1" falsecount="0"/>
-        <line num="26" count="3" type="stmt"/>
       </file>
       <file name="commandRight.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/commandHandling/strategies/commandRight.ts">
         <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>

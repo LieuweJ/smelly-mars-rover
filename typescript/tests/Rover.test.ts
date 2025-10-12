@@ -4,10 +4,10 @@ import {ToRoverSupportedStateFactory} from "../src/Factories/ToRoverSupportedSta
 import {CommandsHandler} from "../src/commandHandling/commandsHandler";
 import {CommandLeft} from "../src/commandHandling/strategies/commandLeft";
 import {CommandRight} from "../src/commandHandling/strategies/commandRight";
-import {CommandMoveOne} from "../src/commandHandling/strategies/commandMoveOne";
+import {CommandForward} from "../src/commandHandling/strategies/commandForward";
 
 describe("MarsRoverShould", () => {
-    const commandsHandler = new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandMoveOne()])
+    const commandsHandler = new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandForward()])
     const commandsFactory = new ToRoverSupportedCommandsFactory();
     const vehicleStateFactory = new ToRoverSupportedStateFactory();
 
