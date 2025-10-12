@@ -6,7 +6,7 @@ enum Axis {
 }
 
 export class RoverState implements VehicleState {
-    private directionMap: Map<Direction, { multiplier: number, axis: Axis }> = new Map([
+    private axisMultipliers: Map<Direction, { multiplier: number, axis: Axis }> = new Map([
         [EAST, {multiplier: 1, axis: Axis.eastWest}],
         [WEST, {multiplier: -1, axis: Axis.eastWest}],
         [NORTH, {multiplier: 1, axis: Axis.northSouth}],
@@ -20,14 +20,14 @@ export class RoverState implements VehicleState {
     }
 
     move(direction: Direction, squares: number) {
-        const directionDetails = this.directionMap.get(direction);
-        if (!directionDetails) {
+        const axisMultiplier = this.axisMultipliers.get(direction);
+        if (!axisMultiplier) {
             return;
         }
 
-        const movement = squares * directionDetails.multiplier;
+        const movement = squares * axisMultiplier.multiplier;
 
-        this.updatePosition(directionDetails.axis, movement)
+        this.updatePosition(axisMultiplier.axis, movement)
     }
 
     private updatePosition(axis: Axis, movement: number) {
