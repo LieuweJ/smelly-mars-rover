@@ -14,12 +14,12 @@ const stringToCommandMap: { [key: string]: Command } = {
     [COMMAND_MOVE]: Command.M,
 };
 
-export type ICommandsFactory = {
-    fromString: (input: string) => Command[];
+export type CommandsFactory<T> = {
+    create: (input: T) => Command[];
 }
 
-export class CommandsFactory implements ICommandsFactory {
-    fromString(input: string): Command[] {
+export class StringToCommandsFactory implements CommandsFactory<string> {
+    create(input: string): Command[] {
         const commands: Command[] = []
 
         for (let i = 0; i < input.length; i++) {
