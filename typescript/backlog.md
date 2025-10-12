@@ -63,8 +63,8 @@ Done:
 - make class Rover work with and without DI.
 - cleanup.
 - cleanup, move global params to Factory files.
-- ----- State after 4 hours 30 minutes.
 - refactor responsibility move amount of square from VehicleState to MoveCommand: 'moveOneX' to moveXBy(squares: number)
+- ----- State after 4 hours 35 minutes.
 
 Not doing:
 
