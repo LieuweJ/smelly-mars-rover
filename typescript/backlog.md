@@ -67,6 +67,8 @@ Done:
 - refactor responsibility move amount of square from VehicleState to MoveCommand: 'moveOneX' to moveXBy(squares: number)
 - renamed Factories. Made them more generic.
 - ----- State after 4 hours 45 minutes.
+- refactor: Simplified VehicleState, and simplified Commands. Moved more logic into RoverState.
+- ----- State after 5 hours 15 minutes.
 
 Not doing:
 

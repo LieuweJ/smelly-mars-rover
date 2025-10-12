@@ -15,21 +15,11 @@ export const EAST = Direction.E;
 export interface VehicleState {
     isFacing(direction: Direction): boolean;
 
-    moveNorthBy(squares: number): void;
+    getFacingDirection(): Direction;
 
-    moveWestBy(squares: number): void;
+    move(direction: Direction, squares: number): void;
 
-    moveSouthBy(squares: number): void;
-
-    moveEastBy(squares: number): void;
-
-    turnToEast(): void;
-
-    turnToSouth(): void;
-
-    turnToWest(): void;
-
-    turnToNorth(): void;
+    turnTo(direction: Direction): void;
 
     printCurrentPosition(): string;
 }

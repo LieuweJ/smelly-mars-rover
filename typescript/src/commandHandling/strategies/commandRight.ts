@@ -9,23 +9,26 @@ export class CommandRight implements CommandStrategy {
 
     execute(vehicleState: VehicleState) {
         if (vehicleState.isFacing(EAST)) {
-            vehicleState.turnToSouth();
+            vehicleState.turnTo(SOUTH);
+
             return;
         }
 
         if (vehicleState.isFacing(SOUTH)) {
-            vehicleState.turnToWest();
+            vehicleState.turnTo(WEST);
+
             return;
         }
 
         if (vehicleState.isFacing(WEST)) {
-            vehicleState.turnToNorth();
-            return;
+            vehicleState.turnTo(NORTH);
 
+            return;
         }
 
         if (vehicleState.isFacing(NORTH)) {
-            vehicleState.turnToEast()
+            vehicleState.turnTo(EAST);
+            
             return;
         }
     }

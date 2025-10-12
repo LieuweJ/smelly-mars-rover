@@ -1,46 +1,53 @@
 import {Direction, EAST, NORTH, SOUTH, VehicleState, WEST} from "./Factories/ToRoverSupportedStateFactory";
 
+enum Axis {
+    eastWest = 'eastWest',
+    northSouth = 'northSouth',
+}
+
 export class RoverState implements VehicleState {
+    private directionMap: Map<Direction, { multiplier: number, axis: Axis }> = new Map([
+        [EAST, {multiplier: 1, axis: Axis.eastWest}],
+        [WEST, {multiplier: -1, axis: Axis.eastWest}],
+        [NORTH, {multiplier: 1, axis: Axis.northSouth}],
+        [SOUTH, {multiplier: -1, axis: Axis.northSouth}],
+    ]);
+
     constructor(
         private eastWest: number = 0,
         private northSouth: number = 0,
         private frontFacing: Direction = NORTH) {
     }
 
+    move(direction: Direction, squares: number) {
+        const directionDetails = this.directionMap.get(direction);
+        if (!directionDetails) {
+            return;
+        }
+
+        const movement = squares * directionDetails.multiplier;
+
+        this.updatePosition(directionDetails.axis, movement)
+    }
+
+    private updatePosition(axis: Axis, movement: number) {
+        if (axis === Axis.eastWest) {
+            this.eastWest += movement;
+        } else if (axis === Axis.northSouth) {
+            this.northSouth += movement;
+        }
+    }
+
     isFacing(direction: Direction) {
         return this.frontFacing === direction;
     }
 
-    moveNorthBy(squares: number) {
-        this.northSouth = this.northSouth + squares;
+    getFacingDirection(): Direction {
+        return this.frontFacing;
     }
 
-    moveWestBy(squares: number) {
-        this.eastWest = this.eastWest - squares;
-    }
-
-    moveSouthBy(squares: number) {
-        this.northSouth = this.northSouth - squares;
-    }
-
-    moveEastBy(squares: number) {
-        this.eastWest = this.eastWest + squares;
-    }
-
-    turnToEast() {
-        this.frontFacing = EAST;
-    }
-
-    turnToSouth() {
-        this.frontFacing = SOUTH;
-    }
-
-    turnToWest() {
-        this.frontFacing = WEST;
-    }
-
-    turnToNorth() {
-        this.frontFacing = NORTH;
+    turnTo(direction: Direction) {
+        this.frontFacing = direction;
     }
 
     printCurrentPosition(): string {

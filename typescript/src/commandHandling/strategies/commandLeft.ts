@@ -9,23 +9,25 @@ export class CommandLeft implements CommandStrategy {
 
     execute(vehicleState: VehicleState) {
         if (vehicleState.isFacing(EAST)) {
-            vehicleState.turnToNorth();
+            vehicleState.turnTo(NORTH);
+
             return;
         }
 
         if (vehicleState.isFacing(NORTH)) {
-            vehicleState.turnToWest();
+            vehicleState.turnTo(WEST);
+
             return;
         }
 
         if (vehicleState.isFacing(WEST)) {
-            vehicleState.turnToSouth();
+            vehicleState.turnTo(SOUTH);
 
             return;
         }
 
         if (vehicleState.isFacing(SOUTH)) {
-            vehicleState.turnToEast();
+            vehicleState.turnTo(EAST);
 
             return;
         }

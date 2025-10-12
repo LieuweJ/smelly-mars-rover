@@ -5,6 +5,7 @@ import {CommandsHandler} from "../src/commandHandling/commandsHandler";
 import {CommandLeft} from "../src/commandHandling/strategies/commandLeft";
 import {CommandRight} from "../src/commandHandling/strategies/commandRight";
 import {CommandForward} from "../src/commandHandling/strategies/commandForward";
+import {Direction} from "node:tty";
 
 describe("MarsRoverShould", () => {
     const commandsHandler = new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandForward()])
@@ -101,5 +102,14 @@ describe("MarsRoverShould", () => {
         const roverState = vehicleStateFactory.create();
 
         expect(roverState.printCurrentPosition()).toBe('0 0 N')
+    })
+
+    test('RoverState does not move when being asked to move to a direction RoverState does not know.', () => {
+        const roverState = vehicleStateFactory.create("1 2 N");
+
+        // not existing direction for testing purposes
+        // @ts-ignore
+        roverState.move("X" as unknown as Direction, 3);
+        expect(roverState.printCurrentPosition()).toBe('1 2 N')
     })
 });

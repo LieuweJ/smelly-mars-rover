@@ -1,5 +1,5 @@
 import {CommandStrategy} from "../commandsHandler";
-import {EAST, NORTH, SOUTH, VehicleState, WEST} from "../../Factories/ToRoverSupportedStateFactory";
+import {VehicleState} from "../../Factories/ToRoverSupportedStateFactory";
 import {Command, COMMAND_MOVE} from "../../Factories/ToRoverSupportedCommandsFactory";
 
 export class CommandForward implements CommandStrategy {
@@ -11,20 +11,6 @@ export class CommandForward implements CommandStrategy {
     }
 
     execute(vehicleState: VehicleState) {
-        if (vehicleState.isFacing(EAST)) {
-            vehicleState.moveEastBy(this.distance);
-        }
-
-        if (vehicleState.isFacing(SOUTH)) {
-            vehicleState.moveSouthBy(this.distance);
-        }
-
-        if (vehicleState.isFacing(WEST)) {
-            vehicleState.moveWestBy(this.distance);
-        }
-
-        if (vehicleState.isFacing(NORTH)) {
-            vehicleState.moveNorthBy(this.distance);
-        }
+        vehicleState.move(vehicleState.getFacingDirection(), this.distance);
     }
 }
