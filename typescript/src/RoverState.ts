@@ -6,7 +6,7 @@ enum Axis {
 }
 
 export class RoverState implements VehicleState {
-    private axisMultipliers: Map<Direction, { multiplier: number, axis: Axis }> = new Map([
+    private readonly axisMultipliers: Map<Direction, { multiplier: number, axis: Axis }> = new Map([
         [EAST, {multiplier: 1, axis: Axis.eastWest}],
         [WEST, {multiplier: -1, axis: Axis.eastWest}],
         [NORTH, {multiplier: 1, axis: Axis.northSouth}],
