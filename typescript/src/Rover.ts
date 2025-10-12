@@ -1,10 +1,9 @@
 import {CommandsHandler, ICommandsHandler} from "./commandHandling/commandsHandler";
-import {StringToCommandsFactory, CommandsFactory} from "./Factories/StringToCommandsFactory";
+import {StringToCommandsFactory} from "./Factories/StringToCommandsFactory";
 import {CommandLeft} from "./commandHandling/strategies/commandLeft";
 import {CommandRight} from "./commandHandling/strategies/commandRight";
 import {CommandMoveOne} from "./commandHandling/strategies/commandMoveOne";
 import {
-    VehicleStateFactory,
     VehicleState,
     StringToVehicleStateFactory
 } from "./Factories/StringToVehicleStateFactory";
