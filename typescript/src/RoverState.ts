@@ -1,4 +1,4 @@
-import {Direction, EAST, NORTH, SOUTH, VehicleState, WEST} from "./Factories/StringToVehicleStateFactory";
+import {Direction, EAST, NORTH, SOUTH, VehicleState, WEST} from "./Factories/StringToRoverStateFactory";
 
 export class RoverState implements VehicleState {
     constructor(

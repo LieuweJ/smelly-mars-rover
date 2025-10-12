@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1760250008545" clover="3.2.0">
-  <project timestamp="1760250008545" name="All files">
+<coverage generated="1760250373843" clover="3.2.0">
+  <project timestamp="1760250373843" name="All files">
     <metrics statements="124" coveredstatements="124" conditionals="29" coveredconditionals="29" methods="33" coveredmethods="33" elements="186" coveredelements="186" complexity="0" loc="124" ncloc="124" packages="4" files="8" classes="8"/>
     <package name="src">
       <metrics statements="33" coveredstatements="33" conditionals="8" coveredconditionals="8" methods="16" coveredmethods="16"/>
@@ -64,7 +64,7 @@
         <line num="29" count="34" type="stmt"/>
         <line num="33" count="19" type="stmt"/>
       </file>
-      <file name="StringToVehicleStateFactory.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/Factories/StringToVehicleStateFactory.ts">
+      <file name="StringToRoverStateFactory.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/Factories/StringToRoverStateFactory.ts">
         <metrics statements="21" coveredstatements="21" conditionals="5" coveredconditionals="5" methods="5" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="cond" truecount="2" falsecount="0"/>
