@@ -45,7 +45,7 @@ export type VehicleStateFactory<T> = {
     create: (initPosition?: T) => VehicleState;
 }
 
-export class StringToRoverStateFactory implements VehicleStateFactory<string> {
+export class ToRoverSupportedStateFactory implements VehicleStateFactory<string> {
     create(initPosition = ""): RoverState {
         const startingPositions = initPosition.split(" ");
 

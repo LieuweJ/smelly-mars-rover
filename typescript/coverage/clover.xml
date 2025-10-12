@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1760250373843" clover="3.2.0">
-  <project timestamp="1760250373843" name="All files">
+<coverage generated="1760250711058" clover="3.2.0">
+  <project timestamp="1760250711058" name="All files">
     <metrics statements="124" coveredstatements="124" conditionals="29" coveredconditionals="29" methods="33" coveredmethods="33" elements="186" coveredelements="186" complexity="0" loc="124" ncloc="124" packages="4" files="8" classes="8"/>
     <package name="src">
       <metrics statements="33" coveredstatements="33" conditionals="8" coveredconditionals="8" methods="16" coveredmethods="16"/>
@@ -46,7 +46,7 @@
     </package>
     <package name="src.Factories">
       <metrics statements="36" coveredstatements="36" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="7"/>
-      <file name="StringToCommandsFactory.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/Factories/StringToCommandsFactory.ts">
+      <file name="ToRoverSupportedCommandsFactory.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/Factories/ToRoverSupportedCommandsFactory.ts">
         <metrics statements="15" coveredstatements="15" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="1" type="stmt"/>
@@ -64,7 +64,7 @@
         <line num="29" count="34" type="stmt"/>
         <line num="33" count="19" type="stmt"/>
       </file>
-      <file name="StringToRoverStateFactory.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/Factories/StringToRoverStateFactory.ts">
+      <file name="ToRoverSupportedStateFactory.ts" path="/Users/lieuwe.jansons/code/dojo/exams/smelly-mars-rover/typescript/src/Factories/ToRoverSupportedStateFactory.ts">
         <metrics statements="21" coveredstatements="21" conditionals="5" coveredconditionals="5" methods="5" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="cond" truecount="2" falsecount="0"/>

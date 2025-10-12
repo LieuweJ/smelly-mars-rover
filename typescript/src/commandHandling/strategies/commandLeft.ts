@@ -1,6 +1,6 @@
 import {CommandStrategy} from "../commandsHandler";
-import {EAST, NORTH, SOUTH, VehicleState, WEST} from "../../Factories/StringToRoverStateFactory";
-import {Command, COMMAND_TURN_LEFT} from "../../Factories/StringToCommandsFactory";
+import {EAST, NORTH, SOUTH, VehicleState, WEST} from "../../Factories/ToRoverSupportedStateFactory";
+import {Command, COMMAND_TURN_LEFT} from "../../Factories/ToRoverSupportedCommandsFactory";
 
 export class CommandLeft implements CommandStrategy {
     shouldExecute(command: Command): boolean {

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/commandHandling/commandsHandler.ts</title>
+    <title>Code coverage report for src/Factories/ToRoverSupportedCommandsFactory.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/commandHandling</a> commandsHandler.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/Factories</a> ToRoverSupportedCommandsFactory.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
@@ -97,13 +97,17 @@
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -115,67 +119,51 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">34x</span>
-<span class="cline-any cline-yes">74x</span>
-<span class="cline-any cline-yes">34x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">34x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">34x</span>
-<span class="cline-any cline-yes">34x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {VehicleState} from "../Factories/ToRoverSupportedStateFactory";
-import {Command} from "../Factories/ToRoverSupportedCommandsFactory";
-&nbsp;
-export type CommandStrategy = {
-    shouldExecute: (command: Command) =&gt; boolean;
-    execute: (vehicleState: VehicleState) =&gt; void;
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export enum Command {
+    R = "R",
+    L = "L",
+    M = "M"
 }
 &nbsp;
-export type ICommandsHandler = {
-    handle: (commands: Command[], vehicleStates: VehicleState[]) =&gt; void
+export const COMMAND_TURN_RIGHT = Command.R;
+export const COMMAND_MOVE = Command.M;
+export const COMMAND_TURN_LEFT = Command.L;
+&nbsp;
+const stringToCommandMap: { [key: string]: Command } = {
+    [COMMAND_TURN_LEFT]: Command.L,
+    [COMMAND_TURN_RIGHT]: Command.R,
+    [COMMAND_MOVE]: Command.M,
+};
+&nbsp;
+export type CommandsFactory&lt;T&gt; = {
+    create: (input: T) =&gt; Command[];
 }
 &nbsp;
-export class CommandsHandler implements ICommandsHandler {
+export class ToRoverSupportedCommandsFactory implements CommandsFactory&lt;string&gt; {
+    create(input: string): Command[] {
+        const commands: Command[] = []
 &nbsp;
-    constructor(private readonly commandStrategies: CommandStrategy[]) {
-    }
+        for (let i = 0; i &lt; input.length; i++) {
+            const command = stringToCommandMap[input[i]];
 &nbsp;
-    handle(commands: Command[], vehicleStates: VehicleState[]) {
-        for (const command of commands) {
-            this.handleCommand(command, vehicleStates);
-        }
-    }
-&nbsp;
-    private handleCommand(command: Command, vehicleStates: VehicleState[]) {
-        for (const strategy of this.commandStrategies) {
-            if (strategy.shouldExecute(command)) {
-                this.instructVehicles(strategy, vehicleStates);
-&nbsp;
-                break;
+            if (command) {
+                commands.push(command);
             }
         }
-    }
 &nbsp;
-    private instructVehicles(strategy: CommandStrategy, vehicleStates: VehicleState[]) {
-        for (const vehicleState of vehicleStates) {
-            strategy.execute(vehicleState)
-        }
+        return commands;
     }
 }</pre></td></tr></table></pre>
 

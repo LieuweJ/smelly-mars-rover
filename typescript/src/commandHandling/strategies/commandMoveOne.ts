@@ -1,6 +1,6 @@
 import {CommandStrategy} from "../commandsHandler";
-import {EAST, NORTH, SOUTH, VehicleState, WEST} from "../../Factories/StringToRoverStateFactory";
-import {Command, COMMAND_MOVE} from "../../Factories/StringToCommandsFactory";
+import {EAST, NORTH, SOUTH, VehicleState, WEST} from "../../Factories/ToRoverSupportedStateFactory";
+import {Command, COMMAND_MOVE} from "../../Factories/ToRoverSupportedCommandsFactory";
 
 const defaultDistance = 1;
 

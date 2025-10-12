@@ -1,6 +1,6 @@
 import {Rover} from '../src/Rover';
-import {StringToCommandsFactory} from "../src/Factories/StringToCommandsFactory";
-import {StringToRoverStateFactory} from "../src/Factories/StringToRoverStateFactory";
+import {ToRoverSupportedCommandsFactory} from "../src/Factories/ToRoverSupportedCommandsFactory";
+import {ToRoverSupportedStateFactory} from "../src/Factories/ToRoverSupportedStateFactory";
 import {CommandsHandler} from "../src/commandHandling/commandsHandler";
 import {CommandLeft} from "../src/commandHandling/strategies/commandLeft";
 import {CommandRight} from "../src/commandHandling/strategies/commandRight";
@@ -8,8 +8,8 @@ import {CommandMoveOne} from "../src/commandHandling/strategies/commandMoveOne";
 
 describe("MarsRoverShould", () => {
     const commandsHandler = new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandMoveOne()])
-    const commandsFactory = new StringToCommandsFactory();
-    const vehicleStateFactory = new StringToRoverStateFactory();
+    const commandsFactory = new ToRoverSupportedCommandsFactory();
+    const vehicleStateFactory = new ToRoverSupportedStateFactory();
 
     test.each([
         ["1 2 N", "", "1 2 N"],
