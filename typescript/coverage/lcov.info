@@ -88,7 +88,7 @@ BRF:6
 BRH:6
 end_of_record
 TN:
-SF:src/Factories/ToRoverStateFactory.ts
+SF:src/Factories/RoverStateFactory.ts
 FN:3,(anonymous_0)
 FN:39,(anonymous_1)
 FN:53,(anonymous_2)
@@ -133,7 +133,7 @@ BRF:5
 BRH:5
 end_of_record
 TN:
-SF:src/Factories/ToVehicleCommandsFactory.ts
+SF:src/Factories/VehicleCommandsFactory.ts
 FN:1,(anonymous_0)
 FN:22,(anonymous_1)
 FNF:2

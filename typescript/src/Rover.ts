@@ -1,12 +1,12 @@
 import {CommandsHandler, ICommandsHandler} from "./commandHandling/commandsHandler";
-import {CommandsFactory, ToVehicleCommandsFactory} from "./Factories/ToVehicleCommandsFactory";
+import {CommandsFactory, VehicleCommandsFactory} from "./Factories/VehicleCommandsFactory";
 import {CommandLeft} from "./commandHandling/strategies/commandLeft";
 import {CommandRight} from "./commandHandling/strategies/commandRight";
 import {CommandForward} from "./commandHandling/strategies/commandForward";
 import {
     VehicleState,
-    ToRoverStateFactory, VehicleStateFactory
-} from "./Factories/ToRoverStateFactory";
+    RoverStateFactory, VehicleStateFactory
+} from "./Factories/RoverStateFactory";
 
 interface VehicleController {
     go(commands: string): void;
@@ -19,8 +19,8 @@ export class Rover implements VehicleController {
 
     constructor(
         initState: string = '',
-        initStateFactory: VehicleStateFactory<string> = new ToRoverStateFactory(),
-        private readonly commandsFactory: CommandsFactory<string> = new ToVehicleCommandsFactory(),
+        initStateFactory: VehicleStateFactory<string> = new RoverStateFactory(),
+        private readonly commandsFactory: CommandsFactory<string> = new VehicleCommandsFactory(),
         private readonly commandsHandler: ICommandsHandler = new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandForward()]),
     ) {
         this.vehicleState = initStateFactory.create(initState);

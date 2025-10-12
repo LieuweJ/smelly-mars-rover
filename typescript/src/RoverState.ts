@@ -1,4 +1,4 @@
-import {Direction, EAST, NORTH, SOUTH, VehicleState, WEST} from "./Factories/ToRoverStateFactory";
+import {Direction, EAST, NORTH, SOUTH, VehicleState, WEST} from "./Factories/RoverStateFactory";
 
 enum Axis {
     eastWest = 'eastWest',

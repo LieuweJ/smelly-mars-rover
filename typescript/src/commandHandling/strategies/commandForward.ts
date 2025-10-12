@@ -1,6 +1,6 @@
 import {CommandStrategy} from "../commandsHandler";
-import {VehicleState} from "../../Factories/ToRoverStateFactory";
-import {Command, COMMAND_MOVE} from "../../Factories/ToVehicleCommandsFactory";
+import {VehicleState} from "../../Factories/RoverStateFactory";
+import {Command, COMMAND_MOVE} from "../../Factories/VehicleCommandsFactory";
 
 export class CommandForward implements CommandStrategy {
     constructor(private readonly distance: number = 1) {
