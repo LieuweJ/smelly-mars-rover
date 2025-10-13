@@ -18,8 +18,5 @@ export class CommandRight extends TurnStrategy implements CommandStrategy {
     shouldExecute(command: Command): boolean {
         return command === COMMAND_TURN_RIGHT
     }
-
-    execute(vehicleState: VehicleState) {
-        super.execute(vehicleState);
-    }
+    
 }
