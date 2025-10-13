@@ -68,7 +68,9 @@ Done:
 - renamed Factories. Made them more generic.
 - ----- State after 4 hours 45 minutes.
 - refactor: Simplified VehicleState, and simplified Commands. Moved more logic into RoverState.
-- ----- State after 5 hours 15 minutes.
+- refactored: Made CommandLeft/Right implement TurnStrategy. TurnStrategy handles turning via DirectionMap given in
+  constructor.
+- ---- State after 5 hours 30 minutes
 
 Not doing:
 

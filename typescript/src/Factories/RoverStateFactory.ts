@@ -13,8 +13,6 @@ export const SOUTH = Direction.S;
 export const EAST = Direction.E;
 
 export interface VehicleState {
-    isFacing(direction: Direction): boolean;
-
     getFacingDirection(): Direction;
 
     moveIn(direction: Direction, squares: number): void;

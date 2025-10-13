@@ -30,10 +30,6 @@ export class RoverState implements VehicleState {
         this[axisMultiplier.axis] += movement;
     }
 
-    isFacing(direction: Direction) {
-        return this.frontFacing === direction;
-    }
-
     getFacingDirection(): Direction {
         return this.frontFacing;
     }
