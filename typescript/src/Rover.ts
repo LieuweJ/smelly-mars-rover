@@ -14,7 +14,14 @@ export class Rover extends RoverController {
     constructor(initState: string = '') {
         console.warn('Rover class is deprecated. Use RoverController for better performance and maintainability. See ticket 123.');
         const initStateFactory = new RoverStateFactory();
-        super(initStateFactory.create(initState), new VehicleCommandsFactory(), new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandForward()]));
+        super(
+            initStateFactory.create(initState),
+            new VehicleCommandsFactory(),
+            new CommandsHandler([
+                new CommandLeft(),
+                new CommandRight(),
+                new CommandForward()
+            ]));
     }
 
     /**
