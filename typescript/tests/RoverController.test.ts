@@ -1,4 +1,3 @@
-import {Rover} from '../src/Rover';
 import {RoverStateFactory} from "../src/Factories/RoverStateFactory";
 import {Direction} from "node:tty";
 import {RoverController} from "../src/controllers/roverController";

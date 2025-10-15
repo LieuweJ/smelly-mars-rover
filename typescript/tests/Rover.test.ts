@@ -1,12 +1,4 @@
 import {Rover} from '../src/Rover';
-import {RoverStateFactory} from "../src/Factories/RoverStateFactory";
-import {Direction} from "node:tty";
-import {RoverController} from "../src/controllers/roverController";
-import {VehicleCommandsFactory} from "../src/Factories/VehicleCommandsFactory";
-import {CommandsHandler} from "../src/commandHandling/commandsHandler";
-import {CommandLeft} from "../src/commandHandling/strategies/commandLeft";
-import {CommandRight} from "../src/commandHandling/strategies/commandRight";
-import {CommandForward} from "../src/commandHandling/strategies/commandForward";
 
 describe("Deprecated Rover class should", () => {
     test.each([
