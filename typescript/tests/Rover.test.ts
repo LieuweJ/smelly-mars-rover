@@ -114,7 +114,6 @@ describe("MarsRover Should", () => {
 });
 
 function createRoverController(startingPosition: string): RoverController {
-    console.warn('Rover class is deprecated. Use RoverController for better performance and maintainability. See ticket 123.');
     const initStateFactory = new RoverStateFactory();
 
     return new RoverController(

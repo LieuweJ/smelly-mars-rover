@@ -72,7 +72,9 @@ Done:
   constructor.
 - ---- State after 5 hours 30 minutes
 - refactor: Introduced Strangler Fig for Rover class. Moved all logic to RoverController class.
-- ---- State after 5 hours 40 minutes
+- refactor: Tests reflect RoverContoller, unless it is something Rover class specific.
+- cleanup.
+- ---- State after 5 hours 50 minutes
 
 Not doing:
 
