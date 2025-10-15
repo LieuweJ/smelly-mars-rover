@@ -1,15 +1,8 @@
 import {Rover} from '../src/Rover';
-import {VehicleCommandsFactory} from "../src/Factories/VehicleCommandsFactory";
 import {RoverStateFactory} from "../src/Factories/RoverStateFactory";
-import {CommandsHandler} from "../src/commandHandling/commandsHandler";
-import {CommandLeft} from "../src/commandHandling/strategies/commandLeft";
-import {CommandRight} from "../src/commandHandling/strategies/commandRight";
-import {CommandForward} from "../src/commandHandling/strategies/commandForward";
 import {Direction} from "node:tty";
 
-describe("MarsRoverShould", () => {
-    const commandsHandler = new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandForward()])
-    const commandsFactory = new VehicleCommandsFactory();
+describe("MarsRover Should", () => {
     const vehicleStateFactory = new RoverStateFactory();
 
     test.each([
