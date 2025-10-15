@@ -12,7 +12,7 @@ import {RoverController} from "./controllers/roverController";
  */
 export class Rover extends RoverController {
     constructor(initState: string = '') {
-        console.warn('Rover class is deprecated. Use RoverController for better performance and maintainability.');
+        console.warn('Rover class is deprecated. Use RoverController for better performance and maintainability. See ticket 123.');
         const initStateFactory = new RoverStateFactory();
         super(initStateFactory.create(initState), new VehicleCommandsFactory(), new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandForward()]));
     }
@@ -22,8 +22,7 @@ export class Rover extends RoverController {
      * Use `RoverController::go` instead.
      */
     public G(commands: string): void {
-        // techDebt: Should Rover.G also be able to handle empty string? (See: ticketNumber 124)
-        console.warn('Rover.G method is deprecated. Use RoverController::go instead.');
+        console.warn('Rover.G method is deprecated. Use RoverController::go instead. RoverController::go("") (empty string) will not throw an error.');
         if (!commands[0]) {
             throw new Error('Cannot read properties of undefined (reading \'length\')')
         }
@@ -36,8 +35,7 @@ export class Rover extends RoverController {
      * Use `RoverController::getPosition` instead.
      */
     public get XYD(): string {
-        // techDebt: logging is part of techDebt analysis point 1 (See: ticketNumber 123)
-        console.warn('Rover.XYD method is deprecated. Use RoverController::getPosition instead.');
+        console.warn('Rover.XYD method is deprecated. Use RoverController::getPosition instead. See ticket 123.');
         return this.getPosition()
     }
 
@@ -47,7 +45,7 @@ export class Rover extends RoverController {
      */
     public pos(): string {
         // techDebt: logging is part of techDebt analysis point 1 (ticketNumber 123)
-        console.warn('Rover.pos method is deprecated. Use RoverController::getPosition instead.');
+        console.warn('Rover.pos method is deprecated. Use RoverController::getPosition instead. See ticket 123.');
         return this.getPosition()
     }
 }
