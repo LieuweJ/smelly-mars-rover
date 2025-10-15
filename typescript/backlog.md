@@ -71,6 +71,7 @@ Done:
 - refactored: Made CommandLeft/Right implement TurnStrategy. TurnStrategy handles turning via DirectionMap given in
   constructor.
 - ---- State after 5 hours 30 minutes
+- refactor: Introduced Strangler Fig for Rover class. Moved all logic to RoverController class.
 
 Not doing:
 

@@ -1,40 +1,29 @@
-import {CommandsHandler, ICommandsHandler} from "./commandHandling/commandsHandler";
-import {CommandsFactory, VehicleCommandsFactory} from "./Factories/VehicleCommandsFactory";
+import {CommandsHandler} from "./commandHandling/commandsHandler";
+import {VehicleCommandsFactory} from "./Factories/VehicleCommandsFactory";
 import {CommandLeft} from "./commandHandling/strategies/commandLeft";
 import {CommandRight} from "./commandHandling/strategies/commandRight";
 import {CommandForward} from "./commandHandling/strategies/commandForward";
-import {
-    VehicleState,
-    RoverStateFactory, VehicleStateFactory
-} from "./Factories/RoverStateFactory";
+import {RoverStateFactory} from "./Factories/RoverStateFactory";
+import {RoverController} from "./controllers/roverController";
 
-interface VehicleController {
-    go(commands: string): void;
-
-    pos(): string;
-}
-
-export class Rover implements VehicleController {
-    private readonly vehicleState: VehicleState
-
-    constructor(
-        initState: string = '',
-        initStateFactory: VehicleStateFactory<string> = new RoverStateFactory(),
-        private readonly commandsFactory: CommandsFactory<string> = new VehicleCommandsFactory(),
-        private readonly commandsHandler: ICommandsHandler = new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandForward()]),
-    ) {
-        this.vehicleState = initStateFactory.create(initState);
+/**
+ * @deprecated This class is deprecated.
+ * Use `RoverController` instead for better performance and maintainability.
+ */
+export class Rover extends RoverController {
+    constructor(initState: string = '') {
+        console.warn('Rover class is deprecated. Use RoverController for better performance and maintainability.');
+        const initStateFactory = new RoverStateFactory();
+        super(initStateFactory.create(initState), new VehicleCommandsFactory(), new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandForward()]));
     }
 
-    public go(commands: string): void {
-        this.commandsHandler.handle(
-            this.commandsFactory.create(commands),
-            [this.vehicleState]
-        );
-    }
-
+    /**
+     * @deprecated This method is deprecated.
+     * Use `RoverController::go` instead.
+     */
     public G(commands: string): void {
         // techDebt: Should Rover.G also be able to handle empty string? (See: ticketNumber 124)
+        console.warn('Rover.G method is deprecated. Use RoverController::go instead.');
         if (!commands[0]) {
             throw new Error('Cannot read properties of undefined (reading \'length\')')
         }
@@ -42,15 +31,23 @@ export class Rover implements VehicleController {
         this.go(commands[0]);
     }
 
+    /**
+     * @deprecated This method is deprecated.
+     * Use `RoverController::getPosition` instead.
+     */
     public get XYD(): string {
         // techDebt: logging is part of techDebt analysis point 1 (See: ticketNumber 123)
-        console.log('XYD called');
-        return this.vehicleState.printCurrentPosition()
+        console.warn('Rover.XYD method is deprecated. Use RoverController::getPosition instead.');
+        return this.getPosition()
     }
 
+    /**
+     * @deprecated This method is deprecated.
+     * Use `RoverController::getPosition` instead.
+     */
     public pos(): string {
         // techDebt: logging is part of techDebt analysis point 1 (ticketNumber 123)
-        console.log('Pos called');
-        return this.vehicleState.printCurrentPosition()
+        console.warn('Rover.pos method is deprecated. Use RoverController::getPosition instead.');
+        return this.getPosition()
     }
 }

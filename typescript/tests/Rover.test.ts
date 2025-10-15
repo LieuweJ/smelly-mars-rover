@@ -44,7 +44,7 @@ describe("MarsRoverShould", () => {
     ])(
         "When processing one command explicitly, start at '%s', with instructions '%s' => '%s'",
         (startingPosition, instructions, expectedOutput) => {
-            const rover = new Rover(startingPosition, vehicleStateFactory, commandsFactory, commandsHandler);
+            const rover = new Rover(startingPosition);
             rover.G(instructions);
             expect(rover.pos()).toBe(expectedOutput);
             expect(rover.XYD).toBe(expectedOutput);
@@ -63,7 +63,7 @@ describe("MarsRoverShould", () => {
     );
 
     test('When initialized with no parameters, position is "0 0 N"', () => {
-        const rover = new Rover('', vehicleStateFactory, commandsFactory, commandsHandler);
+        const rover = new Rover('');
         expect(rover.pos()).toBe("0 0 N");
     })
 

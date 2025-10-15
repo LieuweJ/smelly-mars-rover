@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/18</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>18/18</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -115,10 +115,8 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -129,32 +127,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -164,8 +150,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -173,43 +167,32 @@
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {CommandsHandler, ICommandsHandler} from "./commandHandling/commandsHandler";
-import {CommandsFactory, VehicleCommandsFactory} from "./Factories/VehicleCommandsFactory";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {CommandsHandler} from "./commandHandling/commandsHandler";
+import {VehicleCommandsFactory} from "./Factories/VehicleCommandsFactory";
 import {CommandLeft} from "./commandHandling/strategies/commandLeft";
 import {CommandRight} from "./commandHandling/strategies/commandRight";
 import {CommandForward} from "./commandHandling/strategies/commandForward";
-import {
-    VehicleState,
-    RoverStateFactory, VehicleStateFactory
-} from "./Factories/RoverStateFactory";
+import {RoverStateFactory} from "./Factories/RoverStateFactory";
+import {RoverController} from "./controllers/roverController";
 &nbsp;
-interface VehicleController {
-    go(commands: string): void;
-&nbsp;
-    pos(): string;
-}
-&nbsp;
-export class Rover implements VehicleController {
-    private readonly vehicleState: VehicleState
-&nbsp;
-    constructor(
-        initState: string = '',
-        initStateFactory: VehicleStateFactory&lt;string&gt; = new RoverStateFactory(),
-        private readonly commandsFactory: CommandsFactory&lt;string&gt; = new VehicleCommandsFactory(),
-        private readonly commandsHandler: ICommandsHandler = new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandForward()]),
-    ) {
-        this.vehicleState = initStateFactory.create(initState);
+/**
+ * @deprecated This class is deprecated.
+ * Use `RoverController` instead for better performance and maintainability.
+ */
+export class Rover extends RoverController {
+    constructor(initState: string = '') {
+        console.warn('Rover class is deprecated. Use RoverController for better performance and maintainability.');
+        const initStateFactory = new RoverStateFactory();
+        super(initStateFactory.create(initState), new VehicleCommandsFactory(), new CommandsHandler([new CommandLeft(), new CommandRight(), new CommandForward()]));
     }
 &nbsp;
-    public go(commands: string): void {
-        this.commandsHandler.handle(
-            this.commandsFactory.create(commands),
-            [this.vehicleState]
-        );
-    }
-&nbsp;
+    /**
+     * @deprecated This method is deprecated.
+     * Use `RoverController::go` instead.
+     */
     public G(commands: string): void {
         // techDebt: Should Rover.G also be able to handle empty string? (See: ticketNumber 124)
+        console.warn('Rover.G method is deprecated. Use RoverController::go instead.');
         if (!commands[0]) {
             throw new Error('Cannot read properties of undefined (reading \'length\')')
         }
@@ -217,16 +200,24 @@ export class Rover implements VehicleController {
         this.go(commands[0]);
     }
 &nbsp;
+    /**
+     * @deprecated This method is deprecated.
+     * Use `RoverController::getPosition` instead.
+     */
     public get XYD(): string {
         // techDebt: logging is part of techDebt analysis point 1 (See: ticketNumber 123)
-        console.log('XYD called');
-        return this.vehicleState.printCurrentPosition()
+        console.warn('Rover.XYD method is deprecated. Use RoverController::getPosition instead.');
+        return this.getPosition()
     }
 &nbsp;
+    /**
+     * @deprecated This method is deprecated.
+     * Use `RoverController::getPosition` instead.
+     */
     public pos(): string {
         // techDebt: logging is part of techDebt analysis point 1 (ticketNumber 123)
-        console.log('Pos called');
-        return this.vehicleState.printCurrentPosition()
+        console.warn('Rover.pos method is deprecated. Use RoverController::getPosition instead.');
+        return this.getPosition()
     }
 }</pre></td></tr></table></pre>
 
@@ -235,7 +226,7 @@ export class Rover implements VehicleController {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-13T07:03:00.271Z
+                at 2025-10-15T05:08:19.413Z
             </div>
         <script src="../prettify.js"></script>
         <script>
