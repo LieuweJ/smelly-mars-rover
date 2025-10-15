@@ -2,7 +2,6 @@ import {VehicleState} from "../Factories/RoverStateFactory";
 import {CommandsFactory} from "../Factories/VehicleCommandsFactory";
 import {ICommandsHandler} from "../commandHandling/commandsHandler";
 
-
 interface VehicleController {
     go(commands: string): void;
 

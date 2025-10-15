@@ -1,5 +1,5 @@
 import {CommandStrategy} from "../commandsHandler";
-import {EAST, NORTH, SOUTH, VehicleState, WEST} from "../../Factories/RoverStateFactory";
+import {EAST, NORTH, SOUTH, WEST} from "../../Factories/RoverStateFactory";
 import {Command, COMMAND_TURN_RIGHT} from "../../Factories/VehicleCommandsFactory";
 import {TurnStrategy} from "./TurnStrategy";
 
@@ -18,5 +18,4 @@ export class CommandRight extends TurnStrategy implements CommandStrategy {
     shouldExecute(command: Command): boolean {
         return command === COMMAND_TURN_RIGHT
     }
-    
 }

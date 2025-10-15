@@ -14,6 +14,7 @@ export class Rover extends RoverController {
     constructor(initState: string = '') {
         console.warn('Rover class is deprecated. Use RoverController for better performance and maintainability. See ticket 123.');
         const initStateFactory = new RoverStateFactory();
+
         super(
             initStateFactory.create(initState),
             new VehicleCommandsFactory(),
@@ -51,7 +52,6 @@ export class Rover extends RoverController {
      * Use `RoverController::getPosition` instead.
      */
     public pos(): string {
-        // techDebt: logging is part of techDebt analysis point 1 (ticketNumber 123)
         console.warn('Rover.pos method is deprecated. Use RoverController::getPosition instead. See ticket 123.');
         return this.getPosition()
     }
